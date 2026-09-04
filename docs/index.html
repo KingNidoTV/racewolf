@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RaceWolf — Maîtrise ta course</title>
+    <meta
+      name="description"
+      content="RaceWolf transforme les données iRacing en décisions simples, rapides et intelligentes pour les pilotes, les équipes et les casters."
+    />
+    <meta property="og:title" content="RaceWolf — Maîtrise ta course" />
+    <meta
+      property="og:description"
+      content="RaceWolf transforme les données iRacing en décisions simples, rapides et intelligentes pour les pilotes, les équipes et les casters."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/screenshots/racewolf-06-hero-visuel.png" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+
+    <header class="nav">
+      <a class="nav__brand" href="#top">
+        <img src="./assets/logo.png" alt="" width="40" height="40" />
+        <span>RaceWolf</span>
+        <span class="badge-beta">Beta</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#beta">Beta</a>
+        <a href="#features">Fonctions</a>
+        <a href="#gallery">Aperçu</a>
+        <a href="#feedback">Avis &amp; bugs</a>
+        <a href="#install">Installation</a>
+      </nav>
+      <a class="btn btn--sm" href="#download">Télécharger</a>
+    </header>
+
+    <main id="top">
+      <section class="section beta-panel" id="beta" aria-labelledby="beta-title">
+        <div class="beta-panel__inner">
+          <div class="beta-panel__copy">
+            <p class="eyebrow">
+              <span class="dot"></span>
+              Phase de test
+            </p>
+            <h2 id="beta-title">RaceWolf est en Beta</h2>
+            <p>
+              L’application RaceWolf est actuellement en <strong>Beta</strong>.
+              Toutes les fonctionnalités sont accessibles
+              <strong>gratuitement</strong> pendant la phase de test.
+            </p>
+            <p>
+              Les utilisateurs Beta bénéficient d’un
+              <strong>tarif fondateur</strong> lors du lancement officiel —
+              merci de tester, casser et nous aider à améliorer le produit.
+            </p>
+          </div>
+          <ul class="beta-panel__perks">
+            <li>
+              <span class="beta-panel__perk-label">Accès</span>
+              Tout l’overlay et Pit Crew, sans limite
+            </li>
+            <li>
+              <span class="beta-panel__perk-label">Prix</span>
+              Gratuit pendant la Beta
+            </li>
+            <li>
+              <span class="beta-panel__perk-label">Avantage</span>
+              Tarif fondateur réservé aux testeurs
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <header class="section__head">
+          <p class="eyebrow">Modules RaceWolf</p>
+          <h2>Un overlay. Un stand. Une équipe.</h2>
+        </header>
+        <div class="cards">
+          <article class="card">
+            <h3>Overlay piste</h3>
+            <p>
+              Classement, relatif, secteurs, historique de tours, trackmap avec
+              couronnes de leaders de catégorie, et ATH essence / vitesse / régime.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Overlay garage</h3>
+            <p>
+              Météo, usure pneus, derniers tours de relais et tableau complet
+              dès que tu es aux stands ou dans le menu garage iRacing.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Pit Crew</h3>
+            <p>
+              Prépare la course, les pilotes et les trains de pneus, génère la
+              stratégie, puis suis le live pendant la séance.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Collaboration</h3>
+            <p>
+              Héberge ou rejoins avec un code. Ingé, pilote ou lecture seule —
+              tout le monde voit le même plan.
+            </p>
+          </article>
+        </div>
+        <p class="coming-label">À venir</p>
+        <div class="cards cards--soon">
+          <article class="card card--soon">
+            <h3>Module casters <span class="tag">À venir</span></h3>
+            <p>
+              Outils de diffusion : infos live, classements et contextes de
+              course pensés pour le commentaire et le stream.
+            </p>
+          </article>
+          <article class="card card--soon">
+            <h3>Préparation des setups <span class="tag">À venir</span></h3>
+            <p>
+              Prépare et compare tes réglages avant la séance, avec une lecture
+              claire de ce qui compte vraiment sur le tour.
+            </p>
+          </article>
+          <article class="card card--soon">
+            <h3>Analyse après course <span class="tag">À venir</span></h3>
+            <p>
+              Revois la séance après le damier : relais, conso, écarts et
+              points à retravailler pour la prochaine course.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <header class="section__head">
+          <p class="eyebrow">ScreenShot</p>
+        </header>
+        <div class="gallery gallery--stack">
+          <figure>
+            <img
+              src="./assets/screenshots/overlay-garage.png"
+              alt="Overlay garage RaceWolf"
+            />
+            <figcaption>Overlay garage</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="./assets/screenshots/overlay-course.png"
+              alt="Overlay course RaceWolf"
+            />
+            <figcaption>Overlay course</figcaption>
+          </figure>
+          <figure class="gallery__wide">
+            <img
+              src="./assets/screenshots/racewolf-04-pitcrew-preparation.png"
+              alt="Pit Crew : préparation course, pilotes et pneus"
+            />
+            <figcaption>Pit Crew — préparation</figcaption>
+          </figure>
+          <figure class="gallery__wide">
+            <img
+              src="./assets/screenshots/racewolf-05-pitcrew-strategie.png"
+              alt="Pit Crew : stratégie et collaboration"
+            />
+            <figcaption>Pit Crew — stratégie</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="feedback">
+        <header class="section__head">
+          <p class="eyebrow">Ta voix compte</p>
+          <h2>Avis, idées et bugs</h2>
+          <p class="section__intro">
+            Tu testes RaceWolf en Beta : chaque retour nous aide. Décris ce que
+            tu as vu, envoie une capture si possible, et indique ta version Windows
+            et iRacing si tu signales un bug.
+          </p>
+        </header>
+        <div class="feedback-grid">
+          <form class="feedback-form" id="feedback-form" novalidate>
+            <div class="feedback-form__row">
+              <label class="feedback-form__field">
+                <span>Type de message</span>
+                <select name="type" id="feedback-type" required>
+                  <option value="avis">Avis / suggestion</option>
+                  <option value="bug">Signaler un bug</option>
+                </select>
+              </label>
+              <label class="feedback-form__field">
+                <span>Votre e-mail (optionnel)</span>
+                <input
+                  type="email"
+                  name="email"
+                  id="feedback-email"
+                  placeholder="pour vous répondre"
+                  autocomplete="email"
+                />
+              </label>
+            </div>
+            <label class="feedback-form__field">
+              <span>Message</span>
+              <textarea
+                name="message"
+                id="feedback-message"
+                rows="6"
+                required
+                placeholder="Décrivez le problème ou votre suggestion. Pour un bug : étapes pour reproduire, circuit, voiture, overlay ou Pit Crew…"
+              ></textarea>
+            </label>
+            <div class="feedback-form__actions">
+              <button type="submit" class="btn btn--primary">
+                Envoyer mon retour
+              </button>
+              <button type="button" class="btn btn--ghost" id="feedback-copy">
+                Copier le texte
+              </button>
+            </div>
+            <p class="feedback-form__hint" id="feedback-status" hidden></p>
+            <p class="feedback-form__hint">
+              L’envoi ouvre votre client mail. Sinon, copiez le message et
+              contactez
+              <a id="feedback-mailto" href="#">l’équipe RaceWolf</a>.
+            </p>
+          </form>
+          <aside class="feedback-aside">
+            <h3>Signaler un bug rapidement</h3>
+            <p>
+              Pré-remplis le formulaire pour un rapport de bug avec la version
+              actuelle de l’app.
+            </p>
+            <button type="button" class="btn" id="feedback-bug-preset">
+              Modèle bug
+            </button>
+            <h3>Ce qui aide</h3>
+            <ul>
+              <li>Version RaceWolf (affichée sur le site)</li>
+              <li>Windows 10 ou 11</li>
+              <li>Overlay, Pit Crew ou les deux</li>
+              <li>Capture d’écran ou courte vidéo</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--download" id="download">
+        <div class="download-panel">
+          <div>
+            <p class="eyebrow">Windows 10 / 11</p>
+            <h2>Télécharger RaceWolf</h2>
+            <p>
+              Fichier portable : double-clic, pas d’install. iRacing est
+              nécessaire pour l’overlay live. Le mode démo et Pit Crew
+              fonctionnent sans le sim.
+            </p>
+            <a class="btn btn--primary" id="download-btn" href="./downloads/RaceWolf-0.5.0-portable.exe">
+              Télécharger RaceWolf 0.5.0
+            </a>
+            <p class="download-meta" id="download-meta">
+              v0.5.0 · portable · Windows
+            </p>
+          </div>
+          <ol class="steps" id="install">
+            <li>
+              <strong>Télécharge</strong> le <code>.exe</code> portable, puis
+              lance-le.
+            </li>
+            <li>
+              <strong>SmartScreen</strong> peut bloquer l’app (elle n’est pas
+              signée) : Informations complémentaires → Exécuter quand même.
+            </li>
+            <li>
+              Dans le launcher, clique <strong>Lancer l’overlay</strong> avec
+              iRacing ouvert, ou ouvre <strong>Pit Crew</strong>.
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>RaceWolf n’est pas affilié à iRacing.com Motorsport Simulations.</p>
+      <p>Version 0.5.0 · Windows 64 bits</p>
+    </footer>
+
+    <script src="./config.js"></script>
+    <script src="./site.js"></script>
+  </body>
+</html>

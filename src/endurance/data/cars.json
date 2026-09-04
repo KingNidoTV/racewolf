@@ -1,0 +1,479 @@
+{
+  "cars": [
+    {
+      "id": "acura-arx-06-gtp",
+      "label": "Acura ARX-06 GTP",
+      "capaciteReservoirLitres": 88.96
+    },
+    {
+      "id": "acura-nsx-gt3-evo-22",
+      "label": "Acura NSX GT3 EVO 22",
+      "capaciteReservoirLitres": 112.05
+    },
+    {
+      "id": "arca-chevrolet-ss",
+      "label": "ARCA Chevrolet SS",
+      "capaciteReservoirLitres": 70.78
+    },
+    {
+      "id": "arca-ford-mustang",
+      "label": "ARCA Ford Mustang",
+      "capaciteReservoirLitres": 70.78
+    },
+    {
+      "id": "arca-toyota-camry",
+      "label": "ARCA Toyota Camry",
+      "capaciteReservoirLitres": 70.78
+    },
+    {
+      "id": "aston-martin-dbr9-gt1",
+      "label": "Aston Martin DBR9 GT1",
+      "capaciteReservoirLitres": 90.1
+    },
+    {
+      "id": "aston-martin-vantage-gt3-evo",
+      "label": "Aston Martin Vantage GT3 EVO",
+      "capaciteReservoirLitres": 106
+    },
+    {
+      "id": "aston-martin-vantage-gt4",
+      "label": "Aston Martin Vantage GT4",
+      "capaciteReservoirLitres": 126.4
+    },
+    {
+      "id": "audi-90-gto",
+      "label": "Audi 90 GTO",
+      "capaciteReservoirLitres": 120
+    },
+    {
+      "id": "audi-r8-lms-evo-ii-gt3",
+      "label": "Audi R8 LMS EVO II GT3",
+      "capaciteReservoirLitres": 121.1
+    },
+    {
+      "id": "audi-rs3-lms-gen2-tcr",
+      "label": "Audi RS3 LMS Gen2 TCR",
+      "capaciteReservoirLitres": 100
+    },
+    {
+      "id": "bmw-m-hybrid-v8-evo",
+      "label": "BMW M Hybrid V8 (Evo)",
+      "capaciteReservoirLitres": 88.96
+    },
+    {
+      "id": "bmw-m2-racing-g87",
+      "label": "BMW M2 Racing (G87)",
+      "capaciteReservoirLitres": 120
+    },
+    {
+      "id": "bmw-m4-g82-gt4-evo",
+      "label": "BMW M4 G82 GT4 Evo",
+      "capaciteReservoirLitres": 105.23
+    },
+    {
+      "id": "bmw-m4-gt3-evo",
+      "label": "BMW M4 GT3 EVO",
+      "capaciteReservoirLitres": 100
+    },
+    {
+      "id": "bmw-m8-gte",
+      "label": "BMW M8 GTE",
+      "capaciteReservoirLitres": 91.98
+    },
+    {
+      "id": "cadillac-cts-v-racecar",
+      "label": "Cadillac CTS-V Racecar",
+      "capaciteReservoirLitres": 94.64
+    },
+    {
+      "id": "cadillac-v-series-r-gtp",
+      "label": "Cadillac V-Series.R GTP",
+      "capaciteReservoirLitres": 88.96
+    },
+    {
+      "id": "chevrolet-corvette-c6-r-gt1",
+      "label": "Chevrolet Corvette C6.R GT1",
+      "capaciteReservoirLitres": 90.1
+    },
+    {
+      "id": "chevrolet-corvette-c8-r-gte",
+      "label": "Chevrolet Corvette C8.R GTE",
+      "capaciteReservoirLitres": 96.9
+    },
+    {
+      "id": "chevrolet-corvette-z06-gt3-r",
+      "label": "Chevrolet Corvette Z06 GT3.R",
+      "capaciteReservoirLitres": 104.1
+    },
+    {
+      "id": "dallara-dw12",
+      "label": "Dallara DW12",
+      "capaciteReservoirLitres": 68.71
+    },
+    {
+      "id": "dallara-f3",
+      "label": "Dallara F3",
+      "capaciteReservoirLitres": 45.5
+    },
+    {
+      "id": "dallara-il-15",
+      "label": "Dallara IL-15",
+      "capaciteReservoirLitres": 75.7
+    },
+    {
+      "id": "dallara-ir-01",
+      "label": "Dallara IR-01",
+      "capaciteReservoirLitres": 80
+    },
+    {
+      "id": "dallara-ir18",
+      "label": "Dallara IR18",
+      "capaciteReservoirLitres": 70
+    },
+    {
+      "id": "dallara-p217",
+      "label": "Dallara P217",
+      "capaciteReservoirLitres": 96.9
+    },
+    {
+      "id": "euro-nascar-v8gp",
+      "label": "Euro Nascar V8GP",
+      "capaciteReservoirLitres": 98
+    },
+    {
+      "id": "ferrari-296-challenge",
+      "label": "Ferrari 296 Challenge",
+      "capaciteReservoirLitres": 140.06
+    },
+    {
+      "id": "ferrari-296-gt3",
+      "label": "Ferrari 296 GT3",
+      "capaciteReservoirLitres": 104.1
+    },
+    {
+      "id": "ferrari-488-gte",
+      "label": "Ferrari 488 GTE",
+      "capaciteReservoirLitres": 90.09
+    },
+    {
+      "id": "ferrari-499p",
+      "label": "Ferrari 499P",
+      "capaciteReservoirLitres": 88.96
+    },
+    {
+      "id": "fia-f4",
+      "label": "FIA F4",
+      "capaciteReservoirLitres": 48.2
+    },
+    {
+      "id": "ford-gt-gt2",
+      "label": "Ford GT GT2",
+      "capaciteReservoirLitres": 90
+    },
+    {
+      "id": "ford-gte",
+      "label": "Ford GTE",
+      "capaciteReservoirLitres": 98.04
+    },
+    {
+      "id": "ford-mustang-fr500s",
+      "label": "Ford Mustang FR500S",
+      "capaciteReservoirLitres": 58.3
+    },
+    {
+      "id": "ford-mustang-gt3",
+      "label": "Ford Mustang GT3",
+      "capaciteReservoirLitres": 110.15
+    },
+    {
+      "id": "ford-mustang-gt4",
+      "label": "Ford Mustang GT4",
+      "capaciteReservoirLitres": 99.94
+    },
+    {
+      "id": "formula-vee",
+      "label": "Formula Vee",
+      "capaciteReservoirLitres": 20.06
+    },
+    {
+      "id": "gen-4-chevrolet-monte-carlo-2003",
+      "label": "Gen 4 Chevrolet Monte Carlo - 2003",
+      "capaciteReservoirLitres": 83.28
+    },
+    {
+      "id": "gen-4-ford-taurus-2003",
+      "label": "Gen 4 Ford Taurus - 2003",
+      "capaciteReservoirLitres": 83.28
+    },
+    {
+      "id": "global-mazda-mx-5-cup",
+      "label": "Global Mazda MX-5 Cup",
+      "capaciteReservoirLitres": 45.05
+    },
+    {
+      "id": "honda-civic-typre-r-tcr",
+      "label": "Honda Civic Typre R TCR",
+      "capaciteReservoirLitres": 100
+    },
+    {
+      "id": "hpd-arx-01c",
+      "label": "HPD ARX-01c",
+      "capaciteReservoirLitres": 80
+    },
+    {
+      "id": "hyundai-elantra-n-tcr",
+      "label": "Hyundai Elantra N TCR",
+      "capaciteReservoirLitres": 100
+    },
+    {
+      "id": "hyundai-veloster-n-tcr",
+      "label": "Hyundai Veloster N TCR",
+      "capaciteReservoirLitres": 100
+    },
+    {
+      "id": "indy-pro-2000-pm-18",
+      "label": "Indy Pro 2000 PM-18",
+      "capaciteReservoirLitres": 40.13
+    },
+    {
+      "id": "kia-optima",
+      "label": "Kia Optima",
+      "capaciteReservoirLitres": 68.14
+    },
+    {
+      "id": "lamborghini-huracan-gt3-evo",
+      "label": "Lamborghini Huracan GT3 EVO",
+      "capaciteReservoirLitres": 120
+    },
+    {
+      "id": "legends-ford-34-coupe",
+      "label": "Legends Ford '34 Coupe",
+      "capaciteReservoirLitres": 20.06
+    },
+    {
+      "id": "ligier-js-p320",
+      "label": "Ligier JS P320",
+      "capaciteReservoirLitres": 99.94
+    },
+    {
+      "id": "lotus-49",
+      "label": "Lotus 49",
+      "capaciteReservoirLitres": 179.58
+    },
+    {
+      "id": "lotus-79",
+      "label": "Lotus 79",
+      "capaciteReservoirLitres": 154.56
+    },
+    {
+      "id": "mclaren-570s-gt4",
+      "label": "Mclaren 570S GT4",
+      "capaciteReservoirLitres": 110.1
+    },
+    {
+      "id": "mclaren-720s-gt3-evo",
+      "label": "Mclaren 720S GT3 EVO",
+      "capaciteReservoirLitres": 110.15
+    },
+    {
+      "id": "mercedes-amg-gt3-2020",
+      "label": "Mercedes-AMG GT3 2020",
+      "capaciteReservoirLitres": 105.99
+    },
+    {
+      "id": "mercedes-amg-gt4",
+      "label": "Mercedes-AMG GT4",
+      "capaciteReservoirLitres": 96.91
+    },
+    {
+      "id": "mercedes-amg-w13-e-performance",
+      "label": "Mercedes-AMG W13 E Performance",
+      "capaciteReservoirLitres": 110.2
+    },
+    {
+      "id": "nascar-cup-series-next-gen-chevrolet-camaro-zl1",
+      "label": "Nascar Cup Series Next Gen Chevrolet Camaro ZL1",
+      "capaciteReservoirLitres": 75.7
+    },
+    {
+      "id": "nascar-cup-series-next-gen-ford-mustang",
+      "label": "Nascar Cup Series Next Gen Ford Mustang",
+      "capaciteReservoirLitres": 75.7
+    },
+    {
+      "id": "nascar-cup-series-next-gen-toyota-camry",
+      "label": "Nascar Cup Series Next Gen Toyota Camry",
+      "capaciteReservoirLitres": 75.7
+    },
+    {
+      "id": "nascar-legends-buick-lesabre-1987",
+      "label": "NASCAR Legends Buick LeSabre - 1987",
+      "capaciteReservoirLitres": 83.28
+    },
+    {
+      "id": "nascar-legends-chevrolet-monte-carlo-1987",
+      "label": "NASCAR Legends Chevrolet Monte Carlo - 1987",
+      "capaciteReservoirLitres": 83.28
+    },
+    {
+      "id": "nascar-legends-ford-thunderbird-1987",
+      "label": "NASCAR Legends Ford Thunderbird - 1987",
+      "capaciteReservoirLitres": 83.28
+    },
+    {
+      "id": "nascar-legends-pontiac-grand-prix-1987",
+      "label": "NASCAR Legends Pontiac Grand Prix - 1987",
+      "capaciteReservoirLitres": 83.28
+    },
+    {
+      "id": "nascar-o-reilly-chevrolet-camaro",
+      "label": "Nascar O'Reilly Chevrolet Camaro",
+      "capaciteReservoirLitres": 68.71
+    },
+    {
+      "id": "nascar-o-reilly-ford-mustang",
+      "label": "Nascar O'Reilly Ford Mustang",
+      "capaciteReservoirLitres": 68.71
+    },
+    {
+      "id": "nascar-o-reilly-toyota-supra",
+      "label": "Nascar O'Reilly Toyota Supra",
+      "capaciteReservoirLitres": 68.71
+    },
+    {
+      "id": "nascar-truck-chevrolet-silverado",
+      "label": "NASCAR Truck Chevrolet Silverado",
+      "capaciteReservoirLitres": 68.71
+    },
+    {
+      "id": "nascar-truck-ford-f150",
+      "label": "NASCAR Truck Ford F150",
+      "capaciteReservoirLitres": 70.78
+    },
+    {
+      "id": "nascar-truck-ram",
+      "label": "NASCAR Truck RAM",
+      "capaciteReservoirLitres": 70.78
+    },
+    {
+      "id": "nascar-truck-toyota-tundra-trd-pro",
+      "label": "NASCAR Truck Toyota Tundra TRD Pro",
+      "capaciteReservoirLitres": 68.71
+    },
+    {
+      "id": "nissan-gtp-zx-t",
+      "label": "Nissan GTP ZX-T",
+      "capaciteReservoirLitres": 90.55
+    },
+    {
+      "id": "porsche-718-cayman-gt4-clubsport-mr",
+      "label": "Porsche 718 Cayman GT4 Clubsport MR",
+      "capaciteReservoirLitres": 87.1
+    },
+    {
+      "id": "porsche-911-cup-992-2",
+      "label": "Porsche 911 Cup (992.2)",
+      "capaciteReservoirLitres": 110.155
+    },
+    {
+      "id": "porsche-911-gt3-r-992",
+      "label": "Porsche 911 GT3 R (992)",
+      "capaciteReservoirLitres": 99.94
+    },
+    {
+      "id": "porsche-911-rsr",
+      "label": "Porsche 911 RSR",
+      "capaciteReservoirLitres": 99
+    },
+    {
+      "id": "porsche-963-gtp",
+      "label": "Porsche 963 GTP",
+      "capaciteReservoirLitres": 88.96
+    },
+    {
+      "id": "radical-sr10",
+      "label": "Radical SR10",
+      "capaciteReservoirLitres": 97.2
+    },
+    {
+      "id": "radical-sr8",
+      "label": "Radical SR8",
+      "capaciteReservoirLitres": 77
+    },
+    {
+      "id": "ray-ff1600",
+      "label": "Ray FF1600",
+      "capaciteReservoirLitres": 21.96
+    },
+    {
+      "id": "renault-clio",
+      "label": "Renault Clio",
+      "capaciteReservoirLitres": 60.19
+    },
+    {
+      "id": "scca-spec-racer-ford",
+      "label": "SCCA Spec Racer Ford",
+      "capaciteReservoirLitres": 26.5
+    },
+    {
+      "id": "silver-crown",
+      "label": "Silver Crown",
+      "capaciteReservoirLitres": 283.91
+    },
+    {
+      "id": "skip-barber-formula-2000",
+      "label": "Skip Barber Formula 2000",
+      "capaciteReservoirLitres": 19.7
+    },
+    {
+      "id": "stock-car-brasil-chevrolet-cruze",
+      "label": "Stock Car Brasil Chevrolet Cruze",
+      "capaciteReservoirLitres": 136.8
+    },
+    {
+      "id": "stock-car-brasil-toyota-corrolla",
+      "label": "Stock Car Brasil Toyota Corrolla",
+      "capaciteReservoirLitres": 136.8
+    },
+    {
+      "id": "street-stock-casino-m2",
+      "label": "Street Stock - Casino M2",
+      "capaciteReservoirLitres": 83.28
+    },
+    {
+      "id": "street-stock-eagle-t3",
+      "label": "Street Stock - Eagle T3",
+      "capaciteReservoirLitres": 83.28
+    },
+    {
+      "id": "street-stock-panther-c1",
+      "label": "Street Stock - Panther C1",
+      "capaciteReservoirLitres": 83.28
+    },
+    {
+      "id": "super-formula-ligths",
+      "label": "Super Formula Ligths",
+      "capaciteReservoirLitres": 46.18
+    },
+    {
+      "id": "super-formula-sf23",
+      "label": "Super Formula SF23",
+      "capaciteReservoirLitres": 95.01
+    },
+    {
+      "id": "supercars-chevrolet-camaro-gen3",
+      "label": "Supercars Chevrolet Camaro Gen3",
+      "capaciteReservoirLitres": 133
+    },
+    {
+      "id": "supercars-ford-mustang-gen-3",
+      "label": "Supercars Ford Mustang Gen 3",
+      "capaciteReservoirLitres": 133
+    },
+    {
+      "id": "toyota-gr86",
+      "label": "Toyota GR86",
+      "capaciteReservoirLitres": 82.9
+    }
+  ]
+}

@@ -1,0 +1,1179 @@
+{
+  "tracks": [
+    {
+      "id": "legacy-charlotte-motor-speedway-2008-infield-road-course",
+      "label": "[Legacy] Charlotte Motor Speedway - 2008 — Infield Road Course",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-lime-rock-park-chicane",
+      "label": "[Legacy] Lime Rock Park — Chicane",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-lime-rock-park-full-course",
+      "label": "[Legacy] Lime Rock Park — Full Course",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-lime-rock-park-school",
+      "label": "[Legacy] Lime Rock Park — School",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-phoenix-raceway-2008-road-course",
+      "label": "[Legacy] Phoenix Raceway - 2008 — Road Course",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-pocono-raceway-2009-east",
+      "label": "[Legacy] Pocono Raceway - 2009 — East",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-pocono-raceway-2009-international",
+      "label": "[Legacy] Pocono Raceway - 2009 — International",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-pocono-raceway-2009-north",
+      "label": "[Legacy] Pocono Raceway - 2009 — North",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-pocono-raceway-2009-south",
+      "label": "[Legacy] Pocono Raceway - 2009 — South",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-silverstone-circuit-2008-grand-prix",
+      "label": "[Legacy] Silverstone Circuit - 2008 — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-silverstone-circuit-2008-historical-grand-prix",
+      "label": "[Legacy] Silverstone Circuit - 2008 — Historical Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-silverstone-circuit-2008-international",
+      "label": "[Legacy] Silverstone Circuit - 2008 — International",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-silverstone-circuit-2008-national",
+      "label": "[Legacy] Silverstone Circuit - 2008 — National",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-silverstone-circuit-2008-southern",
+      "label": "[Legacy] Silverstone Circuit - 2008 — Southern",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-texas-motor-speedway-2009-road-course-combined",
+      "label": "[Legacy] Texas Motor Speedway - 2009 — Road Course Combined",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-texas-motor-speedway-2009-road-course-long",
+      "label": "[Legacy] Texas Motor Speedway - 2009 — Road Course Long",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-texas-motor-speedway-2009-road-course-short-a",
+      "label": "[Legacy] Texas Motor Speedway - 2009 — Road Course Short A",
+      "category": "Road"
+    },
+    {
+      "id": "legacy-texas-motor-speedway-2009-road-course-short-b",
+      "label": "[Legacy] Texas Motor Speedway - 2009 — Road Course Short B",
+      "category": "Road"
+    },
+    {
+      "id": "atlanta-motor-speedway-road-2008",
+      "label": "Atlanta Motor Speedway — Road - 2008",
+      "category": "Road"
+    },
+    {
+      "id": "auto-club-speedway-competition",
+      "label": "Auto Club Speedway — Competition",
+      "category": "Road"
+    },
+    {
+      "id": "auto-club-speedway-interior",
+      "label": "Auto Club Speedway — Interior",
+      "category": "Road"
+    },
+    {
+      "id": "auto-club-speedway-moto",
+      "label": "Auto Club Speedway — Moto",
+      "category": "Road"
+    },
+    {
+      "id": "autodromo-internazionale-enzo-e-dino-ferrari-grand-prix",
+      "label": "Autodromo Internazionale Enzo e Dino Ferrari — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "autodromo-internazionale-enzo-e-dino-ferrari-moto",
+      "label": "Autodromo Internazionale Enzo e Dino Ferrari — Moto",
+      "category": "Road"
+    },
+    {
+      "id": "autodromo-jose-carlos-pace-grand-prix",
+      "label": "Autódromo José Carlos Pace — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "autodromo-jose-carlos-pace-moto",
+      "label": "Autódromo José Carlos Pace — Moto",
+      "category": "Road"
+    },
+    {
+      "id": "autodromo-nazionale-monza-combined",
+      "label": "Autodromo Nazionale Monza — Combined",
+      "category": "Road"
+    },
+    {
+      "id": "autodromo-nazionale-monza-combined-without-chicanes",
+      "label": "Autodromo Nazionale Monza — Combined without chicanes",
+      "category": "Road"
+    },
+    {
+      "id": "autodromo-nazionale-monza-combined-without-first-chicane",
+      "label": "Autodromo Nazionale Monza — Combined without first chicane",
+      "category": "Road"
+    },
+    {
+      "id": "autodromo-nazionale-monza-gp-without-chicanes",
+      "label": "Autodromo Nazionale Monza — GP without chicanes",
+      "category": "Road"
+    },
+    {
+      "id": "autodromo-nazionale-monza-gp-without-first-chicane",
+      "label": "Autodromo Nazionale Monza — GP without first chicane",
+      "category": "Road"
+    },
+    {
+      "id": "autodromo-nazionale-monza-grand-prix",
+      "label": "Autodromo Nazionale Monza — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "autodromo-nazionale-monza-junior",
+      "label": "Autodromo Nazionale Monza — Junior",
+      "category": "Road"
+    },
+    {
+      "id": "barber-motorsports-park-full-course",
+      "label": "Barber Motorsports Park — Full Course",
+      "category": "Road"
+    },
+    {
+      "id": "barber-motorsports-park-short-a",
+      "label": "Barber Motorsports Park — Short A",
+      "category": "Road"
+    },
+    {
+      "id": "barber-motorsports-park-short-b",
+      "label": "Barber Motorsports Park — Short B",
+      "category": "Road"
+    },
+    {
+      "id": "brands-hatch-circuit-grand-prix",
+      "label": "Brands Hatch Circuit — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "brands-hatch-circuit-indy",
+      "label": "Brands Hatch Circuit — Indy",
+      "category": "Road"
+    },
+    {
+      "id": "canadian-tire-motorsports-park",
+      "label": "Canadian Tire Motorsports Park",
+      "category": "Road"
+    },
+    {
+      "id": "charlotte-motor-speedway-legends-rc-long-2018",
+      "label": "Charlotte Motor Speedway — Legends RC Long - 2018",
+      "category": "Road"
+    },
+    {
+      "id": "charlotte-motor-speedway-legends-rc-medium-2018",
+      "label": "Charlotte Motor Speedway — Legends RC Medium - 2018",
+      "category": "Road"
+    },
+    {
+      "id": "charlotte-motor-speedway-legends-rc-short-2018",
+      "label": "Charlotte Motor Speedway — Legends RC Short - 2018",
+      "category": "Road"
+    },
+    {
+      "id": "charlotte-motor-speedway-roval",
+      "label": "Charlotte Motor Speedway — Roval",
+      "category": "Road"
+    },
+    {
+      "id": "charlotte-motor-speedway-roval-2018",
+      "label": "Charlotte Motor Speedway — Roval - 2018",
+      "category": "Road"
+    },
+    {
+      "id": "charlotte-motor-speedway-roval-long-2018",
+      "label": "Charlotte Motor Speedway — Roval Long - 2018",
+      "category": "Road"
+    },
+    {
+      "id": "chicago-street-course-2023-cup",
+      "label": "Chicago Street Course — 2023 Cup",
+      "category": "Road"
+    },
+    {
+      "id": "chicago-street-course-prototype",
+      "label": "Chicago Street Course — Prototype",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-de-barcelona-catalunya-club",
+      "label": "Circuit de Barcelona Catalunya — Club",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-de-barcelona-catalunya-grand-prix",
+      "label": "Circuit de Barcelona Catalunya — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-de-barcelona-catalunya-historic",
+      "label": "Circuit de Barcelona Catalunya — Historic",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-de-barcelona-catalunya-moto",
+      "label": "Circuit de Barcelona Catalunya — Moto",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-de-barcelona-catalunya-national",
+      "label": "Circuit de Barcelona Catalunya — National",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-de-ledenon",
+      "label": "Circuit de Lédenon",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-de-nevers-magny-cours",
+      "label": "Circuit de Nevers Magny-Cours",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-de-spa-francorchamps-classic-pits",
+      "label": "Circuit de Spa-Francorchamps — Classic Pits",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-de-spa-francorchamps-endurance",
+      "label": "Circuit de Spa-Francorchamps — Endurance",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-de-spa-francorchamps-grand-prix-pits",
+      "label": "Circuit de Spa-Francorchamps — Grand Prix Pits",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-des-24-heures-du-mans-24-heures-du-mans",
+      "label": "Circuit des 24 Heures du Mans — 24 Heures du Mans",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-des-24-heures-du-mans-historic",
+      "label": "Circuit des 24 Heures du Mans — Historic",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-gilles-villeneuve",
+      "label": "Circuit Gilles Villeneuve",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-of-the-americas-east",
+      "label": "Circuit of the Americas — East",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-of-the-americas-grand-prix",
+      "label": "Circuit of the Americas — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-of-the-americas-west",
+      "label": "Circuit of the Americas — West",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-park-zandvoort-chicane-2009",
+      "label": "Circuit Park Zandvoort — Chicane - 2009",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-park-zandvoort-club-2009",
+      "label": "Circuit Park Zandvoort — Club - 2009",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-park-zandvoort-grand-prix",
+      "label": "Circuit Park Zandvoort — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-park-zandvoort-grand-prix-2009",
+      "label": "Circuit Park Zandvoort — Grand Prix - 2009",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-park-zandvoort-grand-prix-w-chicane",
+      "label": "Circuit Park Zandvoort — Grand Prix w/chicane",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-park-zandvoort-nationaal",
+      "label": "Circuit Park Zandvoort — Nationaal",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-park-zandvoort-national-2009",
+      "label": "Circuit Park Zandvoort — National - 2009",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-park-zandvoort-oostelijk",
+      "label": "Circuit Park Zandvoort — Oostelijk",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-park-zandvoort-oostelijk-2009",
+      "label": "Circuit Park Zandvoort — Oostelijk - 2009",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-zolder-alternate",
+      "label": "Circuit Zolder — Alternate",
+      "category": "Road"
+    },
+    {
+      "id": "circuit-zolder-grand-prix",
+      "label": "Circuit Zolder — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "circuito-de-jerez-angel-nieto-grand-prix",
+      "label": "Circuito de Jerez - Ángel Nieto — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "circuito-de-jerez-angel-nieto-moto",
+      "label": "Circuito de Jerez - Ángel Nieto — Moto",
+      "category": "Road"
+    },
+    {
+      "id": "daytona-international-speedway-moto",
+      "label": "Daytona International Speedway — Moto",
+      "category": "Road"
+    },
+    {
+      "id": "daytona-international-speedway-moto-2008",
+      "label": "Daytona International Speedway — Moto - 2008",
+      "category": "Road"
+    },
+    {
+      "id": "daytona-international-speedway-nascar-road",
+      "label": "Daytona International Speedway — NASCAR Road",
+      "category": "Road"
+    },
+    {
+      "id": "daytona-international-speedway-road-course",
+      "label": "Daytona International Speedway — Road Course",
+      "category": "Road"
+    },
+    {
+      "id": "daytona-international-speedway-road-course-2008",
+      "label": "Daytona International Speedway — Road Course - 2008",
+      "category": "Road"
+    },
+    {
+      "id": "daytona-international-speedway-short",
+      "label": "Daytona International Speedway — Short",
+      "category": "Road"
+    },
+    {
+      "id": "daytona-international-speedway-short-2008",
+      "label": "Daytona International Speedway — Short - 2008",
+      "category": "Road"
+    },
+    {
+      "id": "detroit-grand-prix-at-belle-isle",
+      "label": "Detroit Grand Prix at Belle Isle",
+      "category": "Road"
+    },
+    {
+      "id": "donington-park-racing-circuit-grand-prix",
+      "label": "Donington Park Racing Circuit — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "donington-park-racing-circuit-national",
+      "label": "Donington Park Racing Circuit — National",
+      "category": "Road"
+    },
+    {
+      "id": "fuji-international-speedway-grand-prix",
+      "label": "Fuji International Speedway — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "fuji-international-speedway-no-chicane",
+      "label": "Fuji International Speedway — No Chicane",
+      "category": "Road"
+    },
+    {
+      "id": "hockenheimring-baden-wurttemberg-grand-prix",
+      "label": "Hockenheimring Baden-Württemberg — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "hockenheimring-baden-wurttemberg-national-a",
+      "label": "Hockenheimring Baden-Württemberg — National A",
+      "category": "Road"
+    },
+    {
+      "id": "hockenheimring-baden-wurttemberg-national-b",
+      "label": "Hockenheimring Baden-Württemberg — National B",
+      "category": "Road"
+    },
+    {
+      "id": "hockenheimring-baden-wurttemberg-outer",
+      "label": "Hockenheimring Baden-Württemberg — Outer",
+      "category": "Road"
+    },
+    {
+      "id": "hockenheimring-baden-wurttemberg-porsche-experience-center-east",
+      "label": "Hockenheimring Baden-Württemberg — Porsche Experience Center - East",
+      "category": "Road"
+    },
+    {
+      "id": "hockenheimring-baden-wurttemberg-porsche-experience-center-handling",
+      "label": "Hockenheimring Baden-Württemberg — Porsche Experience Center - Handling",
+      "category": "Road"
+    },
+    {
+      "id": "hockenheimring-baden-wurttemberg-porsche-experience-center-outer",
+      "label": "Hockenheimring Baden-Württemberg — Porsche Experience Center - Outer",
+      "category": "Road"
+    },
+    {
+      "id": "hockenheimring-baden-wurttemberg-porsche-experience-center-west",
+      "label": "Hockenheimring Baden-Württemberg — Porsche Experience Center - West",
+      "category": "Road"
+    },
+    {
+      "id": "hockenheimring-baden-wurttemberg-short-a",
+      "label": "Hockenheimring Baden-Württemberg — Short A",
+      "category": "Road"
+    },
+    {
+      "id": "hockenheimring-baden-wurttemberg-short-b",
+      "label": "Hockenheimring Baden-Württemberg — Short B",
+      "category": "Road"
+    },
+    {
+      "id": "homestead-miami-speedway-road-course-a",
+      "label": "Homestead Miami Speedway — Road Course A",
+      "category": "Road"
+    },
+    {
+      "id": "homestead-miami-speedway-road-course-b",
+      "label": "Homestead Miami Speedway — Road Course B",
+      "category": "Road"
+    },
+    {
+      "id": "hungaroring",
+      "label": "Hungaroring",
+      "category": "Road"
+    },
+    {
+      "id": "indianapolis-motor-speedway-bike-2009",
+      "label": "Indianapolis Motor Speedway — Bike - 2009",
+      "category": "Road"
+    },
+    {
+      "id": "indianapolis-motor-speedway-road-course",
+      "label": "Indianapolis Motor Speedway — Road Course",
+      "category": "Road"
+    },
+    {
+      "id": "indianapolis-motor-speedway-road-course-2009",
+      "label": "Indianapolis Motor Speedway — Road Course - 2009",
+      "category": "Road"
+    },
+    {
+      "id": "iowa-speedway-road-course",
+      "label": "Iowa Speedway — Road Course",
+      "category": "Road"
+    },
+    {
+      "id": "kansas-speedway-infield-road-course",
+      "label": "Kansas Speedway — Infield Road Course",
+      "category": "Road"
+    },
+    {
+      "id": "kansas-speedway-road-course",
+      "label": "Kansas Speedway — Road Course",
+      "category": "Road"
+    },
+    {
+      "id": "knockhill-racing-circuit-international",
+      "label": "Knockhill Racing Circuit — International",
+      "category": "Road"
+    },
+    {
+      "id": "knockhill-racing-circuit-international-reverse",
+      "label": "Knockhill Racing Circuit — International Reverse",
+      "category": "Road"
+    },
+    {
+      "id": "knockhill-racing-circuit-national",
+      "label": "Knockhill Racing Circuit — National",
+      "category": "Road"
+    },
+    {
+      "id": "knockhill-racing-circuit-national-reverse",
+      "label": "Knockhill Racing Circuit — National Reverse",
+      "category": "Road"
+    },
+    {
+      "id": "lankebanen-hell-rx-road-long",
+      "label": "Lånkebanen (Hell RX) — Road Long",
+      "category": "Road"
+    },
+    {
+      "id": "lankebanen-hell-rx-road-short",
+      "label": "Lånkebanen (Hell RX) — Road Short",
+      "category": "Road"
+    },
+    {
+      "id": "las-vegas-motor-speedway-road-course-combined",
+      "label": "Las Vegas Motor Speedway — Road Course Combined",
+      "category": "Road"
+    },
+    {
+      "id": "las-vegas-motor-speedway-road-course-long",
+      "label": "Las Vegas Motor Speedway — Road Course Long",
+      "category": "Road"
+    },
+    {
+      "id": "las-vegas-motor-speedway-road-course-short",
+      "label": "Las Vegas Motor Speedway — Road Course Short",
+      "category": "Road"
+    },
+    {
+      "id": "lime-rock-park-chicane",
+      "label": "Lime Rock Park — Chicane",
+      "category": "Road"
+    },
+    {
+      "id": "lime-rock-park-classic",
+      "label": "Lime Rock Park — Classic",
+      "category": "Road"
+    },
+    {
+      "id": "lime-rock-park-grand-prix",
+      "label": "Lime Rock Park — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "lime-rock-park-west-bend-chicane",
+      "label": "Lime Rock Park — West Bend Chicane",
+      "category": "Road"
+    },
+    {
+      "id": "long-beach-street-circuit",
+      "label": "Long Beach Street Circuit",
+      "category": "Road"
+    },
+    {
+      "id": "mid-ohio-sports-car-course-alt-oval",
+      "label": "Mid-Ohio Sports Car Course — Alt Oval",
+      "category": "Road"
+    },
+    {
+      "id": "mid-ohio-sports-car-course-chicane",
+      "label": "Mid-Ohio Sports Car Course — Chicane",
+      "category": "Road"
+    },
+    {
+      "id": "mid-ohio-sports-car-course-full-course",
+      "label": "Mid-Ohio Sports Car Course — Full Course",
+      "category": "Road"
+    },
+    {
+      "id": "mid-ohio-sports-car-course-short",
+      "label": "Mid-Ohio Sports Car Course — Short",
+      "category": "Road"
+    },
+    {
+      "id": "motorland-aragon-grand-prix",
+      "label": "MotorLand Aragón — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "motorland-aragon-motorcycle-grand-prix",
+      "label": "MotorLand Aragón — Motorcycle Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "motorland-aragon-motorcycle-national",
+      "label": "MotorLand Aragón — Motorcycle National",
+      "category": "Road"
+    },
+    {
+      "id": "motorland-aragon-national",
+      "label": "MotorLand Aragón — National",
+      "category": "Road"
+    },
+    {
+      "id": "motorland-aragon-outer",
+      "label": "MotorLand Aragón — Outer",
+      "category": "Road"
+    },
+    {
+      "id": "motorland-aragon-touring-car",
+      "label": "MotorLand Aragón — Touring Car",
+      "category": "Road"
+    },
+    {
+      "id": "motorland-aragon-west",
+      "label": "MotorLand Aragón — West",
+      "category": "Road"
+    },
+    {
+      "id": "motorsport-arena-oschersleben-alternate",
+      "label": "Motorsport Arena Oschersleben — Alternate",
+      "category": "Road"
+    },
+    {
+      "id": "motorsport-arena-oschersleben-b-course",
+      "label": "Motorsport Arena Oschersleben — B Course",
+      "category": "Road"
+    },
+    {
+      "id": "motorsport-arena-oschersleben-c-course",
+      "label": "Motorsport Arena Oschersleben — C Course",
+      "category": "Road"
+    },
+    {
+      "id": "motorsport-arena-oschersleben-grand-prix",
+      "label": "Motorsport Arena Oschersleben — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "mount-panorama-circuit",
+      "label": "Mount Panorama Circuit",
+      "category": "Road"
+    },
+    {
+      "id": "new-hampshire-motor-speedway-road-course",
+      "label": "New Hampshire Motor Speedway — Road Course",
+      "category": "Road"
+    },
+    {
+      "id": "new-hampshire-motor-speedway-road-course-with-north-oval",
+      "label": "New Hampshire Motor Speedway — Road Course with North Oval",
+      "category": "Road"
+    },
+    {
+      "id": "new-hampshire-motor-speedway-road-course-with-south-oval",
+      "label": "New Hampshire Motor Speedway — Road Course with South Oval",
+      "category": "Road"
+    },
+    {
+      "id": "new-jersey-motorsports-park-thunderbolt",
+      "label": "New Jersey Motorsports Park — Thunderbolt",
+      "category": "Road"
+    },
+    {
+      "id": "new-jersey-motorsports-park-thunderbolt-w-both-chicanes",
+      "label": "New Jersey Motorsports Park — Thunderbolt w/both chicanes",
+      "category": "Road"
+    },
+    {
+      "id": "new-jersey-motorsports-park-thunderbolt-w-first-chicane",
+      "label": "New Jersey Motorsports Park — Thunderbolt w/first chicane",
+      "category": "Road"
+    },
+    {
+      "id": "new-jersey-motorsports-park-thunderbolt-w-second-chicane",
+      "label": "New Jersey Motorsports Park — Thunderbolt w/second chicane",
+      "category": "Road"
+    },
+    {
+      "id": "nurburgring-combined-gesamtstrecke-24h",
+      "label": "Nürburgring Combined — Gesamtstrecke 24h",
+      "category": "Road"
+    },
+    {
+      "id": "nurburgring-combined-gesamtstrecke-long",
+      "label": "Nürburgring Combined — Gesamtstrecke Long",
+      "category": "Road"
+    },
+    {
+      "id": "nurburgring-combined-gesamtstrecke-short-w-out-arena",
+      "label": "Nürburgring Combined — Gesamtstrecke Short w/out Arena",
+      "category": "Road"
+    },
+    {
+      "id": "nurburgring-combined-gesamtstrecke-vln",
+      "label": "Nürburgring Combined — Gesamtstrecke VLN",
+      "category": "Road"
+    },
+    {
+      "id": "nurburgring-grand-prix-strecke-bes-wec",
+      "label": "Nürburgring Grand-Prix-Strecke — BES/WEC",
+      "category": "Road"
+    },
+    {
+      "id": "nurburgring-grand-prix-strecke-grand-prix",
+      "label": "Nürburgring Grand-Prix-Strecke — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "nurburgring-grand-prix-strecke-grand-prix-w-out-arena",
+      "label": "Nürburgring Grand-Prix-Strecke — Grand Prix w/out Arena",
+      "category": "Road"
+    },
+    {
+      "id": "nurburgring-grand-prix-strecke-kurzanbindung-w-out-arena",
+      "label": "Nürburgring Grand-Prix-Strecke — Kurzanbindung w/out Arena",
+      "category": "Road"
+    },
+    {
+      "id": "nurburgring-grand-prix-strecke-mullenbachschleife",
+      "label": "Nürburgring Grand-Prix-Strecke — Müllenbachschleife",
+      "category": "Road"
+    },
+    {
+      "id": "nurburgring-grand-prix-strecke-sprintstrecke",
+      "label": "Nürburgring Grand-Prix-Strecke — Sprintstrecke",
+      "category": "Road"
+    },
+    {
+      "id": "nurburgring-nordschleife-industriefahrten",
+      "label": "Nürburgring Nordschleife — Industriefahrten",
+      "category": "Road"
+    },
+    {
+      "id": "nurburgring-nordschleife-touristenfahrten",
+      "label": "Nürburgring Nordschleife — Touristenfahrten",
+      "category": "Road"
+    },
+    {
+      "id": "okayama-international-circuit-full-course",
+      "label": "Okayama International Circuit — Full Course",
+      "category": "Road"
+    },
+    {
+      "id": "okayama-international-circuit-short",
+      "label": "Okayama International Circuit — Short",
+      "category": "Road"
+    },
+    {
+      "id": "oran-park-raceway-grand-prix",
+      "label": "Oran Park Raceway — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "oran-park-raceway-moto",
+      "label": "Oran Park Raceway — Moto",
+      "category": "Road"
+    },
+    {
+      "id": "oran-park-raceway-north",
+      "label": "Oran Park Raceway — North",
+      "category": "Road"
+    },
+    {
+      "id": "oran-park-raceway-road-a",
+      "label": "Oran Park Raceway — Road A",
+      "category": "Road"
+    },
+    {
+      "id": "oran-park-raceway-road-b",
+      "label": "Oran Park Raceway — Road B",
+      "category": "Road"
+    },
+    {
+      "id": "oran-park-raceway-south",
+      "label": "Oran Park Raceway — South",
+      "category": "Road"
+    },
+    {
+      "id": "oulton-park-circuit-fosters",
+      "label": "Oulton Park Circuit — Fosters",
+      "category": "Road"
+    },
+    {
+      "id": "oulton-park-circuit-fosters-w-hislop",
+      "label": "Oulton Park Circuit — Fosters w/Hislop",
+      "category": "Road"
+    },
+    {
+      "id": "oulton-park-circuit-international",
+      "label": "Oulton Park Circuit — International",
+      "category": "Road"
+    },
+    {
+      "id": "oulton-park-circuit-intl-w-no-chicanes",
+      "label": "Oulton Park Circuit — Intl w/no Chicanes",
+      "category": "Road"
+    },
+    {
+      "id": "oulton-park-circuit-intl-w-out-brittens",
+      "label": "Oulton Park Circuit — Intl w/out Brittens",
+      "category": "Road"
+    },
+    {
+      "id": "oulton-park-circuit-intl-w-out-hislop",
+      "label": "Oulton Park Circuit — Intl w/out Hislop",
+      "category": "Road"
+    },
+    {
+      "id": "oulton-park-circuit-island",
+      "label": "Oulton Park Circuit — Island",
+      "category": "Road"
+    },
+    {
+      "id": "oulton-park-circuit-island-historic",
+      "label": "Oulton Park Circuit — Island Historic",
+      "category": "Road"
+    },
+    {
+      "id": "phillip-island-circuit",
+      "label": "Phillip Island Circuit",
+      "category": "Road"
+    },
+    {
+      "id": "red-bull-ring-grand-prix",
+      "label": "Red Bull Ring — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "red-bull-ring-national",
+      "label": "Red Bull Ring — National",
+      "category": "Road"
+    },
+    {
+      "id": "red-bull-ring-north",
+      "label": "Red Bull Ring — North",
+      "category": "Road"
+    },
+    {
+      "id": "road-america-bend",
+      "label": "Road America — Bend",
+      "category": "Road"
+    },
+    {
+      "id": "road-america-full-course",
+      "label": "Road America — Full Course",
+      "category": "Road"
+    },
+    {
+      "id": "road-atlanta-club",
+      "label": "Road Atlanta — Club",
+      "category": "Road"
+    },
+    {
+      "id": "road-atlanta-full-course",
+      "label": "Road Atlanta — Full Course",
+      "category": "Road"
+    },
+    {
+      "id": "road-atlanta-short",
+      "label": "Road Atlanta — Short",
+      "category": "Road"
+    },
+    {
+      "id": "rockingham-speedway-infield-road-course",
+      "label": "Rockingham Speedway — Infield Road Course",
+      "category": "Road"
+    },
+    {
+      "id": "rockingham-speedway-road-course",
+      "label": "Rockingham Speedway — Road Course",
+      "category": "Road"
+    },
+    {
+      "id": "rockingham-speedway-short-road-course",
+      "label": "Rockingham Speedway — Short Road Course",
+      "category": "Road"
+    },
+    {
+      "id": "rudskogen-motorsenter",
+      "label": "Rudskogen Motorsenter",
+      "category": "Road"
+    },
+    {
+      "id": "sandown-international-motor-raceway",
+      "label": "Sandown International Motor Raceway",
+      "category": "Road"
+    },
+    {
+      "id": "sebring-international-raceway-club",
+      "label": "Sebring International Raceway — Club",
+      "category": "Road"
+    },
+    {
+      "id": "sebring-international-raceway-international",
+      "label": "Sebring International Raceway — International",
+      "category": "Road"
+    },
+    {
+      "id": "sebring-international-raceway-modified",
+      "label": "Sebring International Raceway — Modified",
+      "category": "Road"
+    },
+    {
+      "id": "silverstone-circuit-grand-prix",
+      "label": "Silverstone Circuit — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "silverstone-circuit-international",
+      "label": "Silverstone Circuit — International",
+      "category": "Road"
+    },
+    {
+      "id": "silverstone-circuit-national",
+      "label": "Silverstone Circuit — National",
+      "category": "Road"
+    },
+    {
+      "id": "snetterton-circuit-100",
+      "label": "Snetterton Circuit — 100",
+      "category": "Road"
+    },
+    {
+      "id": "snetterton-circuit-200",
+      "label": "Snetterton Circuit — 200",
+      "category": "Road"
+    },
+    {
+      "id": "snetterton-circuit-300",
+      "label": "Snetterton Circuit — 300",
+      "category": "Road"
+    },
+    {
+      "id": "sonoma-raceway-cup",
+      "label": "Sonoma Raceway — Cup",
+      "category": "Road"
+    },
+    {
+      "id": "sonoma-raceway-cup-historic",
+      "label": "Sonoma Raceway — Cup Historic",
+      "category": "Road"
+    },
+    {
+      "id": "sonoma-raceway-open-wheel-2008-2011",
+      "label": "Sonoma Raceway — Open Wheel 2008-2011",
+      "category": "Road"
+    },
+    {
+      "id": "sonoma-raceway-open-wheel-2012-2018",
+      "label": "Sonoma Raceway — Open Wheel 2012-2018",
+      "category": "Road"
+    },
+    {
+      "id": "sonoma-raceway-open-wheel-pre-2008",
+      "label": "Sonoma Raceway — Open Wheel pre-2008",
+      "category": "Road"
+    },
+    {
+      "id": "summit-point-raceway-jefferson-circuit",
+      "label": "Summit Point Raceway — Jefferson Circuit",
+      "category": "Road"
+    },
+    {
+      "id": "summit-point-raceway-jefferson-reverse",
+      "label": "Summit Point Raceway — Jefferson Reverse",
+      "category": "Road"
+    },
+    {
+      "id": "summit-point-raceway-school",
+      "label": "Summit Point Raceway — School",
+      "category": "Road"
+    },
+    {
+      "id": "summit-point-raceway-short",
+      "label": "Summit Point Raceway — Short",
+      "category": "Road"
+    },
+    {
+      "id": "summit-point-raceway-summit-point-raceway",
+      "label": "Summit Point Raceway — Summit Point Raceway",
+      "category": "Road"
+    },
+    {
+      "id": "suzuka-international-racing-course-east",
+      "label": "Suzuka International Racing Course — East",
+      "category": "Road"
+    },
+    {
+      "id": "suzuka-international-racing-course-grand-prix",
+      "label": "Suzuka International Racing Course — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "suzuka-international-racing-course-moto",
+      "label": "Suzuka International Racing Course — Moto",
+      "category": "Road"
+    },
+    {
+      "id": "suzuka-international-racing-course-west",
+      "label": "Suzuka International Racing Course — West",
+      "category": "Road"
+    },
+    {
+      "id": "suzuka-international-racing-course-west-w-chicane",
+      "label": "Suzuka International Racing Course — West w/chicane",
+      "category": "Road"
+    },
+    {
+      "id": "tsukuba-circuit-1000-chicane",
+      "label": "Tsukuba Circuit — 1000 Chicane",
+      "category": "Road"
+    },
+    {
+      "id": "tsukuba-circuit-1000-full",
+      "label": "Tsukuba Circuit — 1000 Full",
+      "category": "Road"
+    },
+    {
+      "id": "tsukuba-circuit-1000-full-reverse",
+      "label": "Tsukuba Circuit — 1000 Full Reverse",
+      "category": "Road"
+    },
+    {
+      "id": "tsukuba-circuit-1000-outer",
+      "label": "Tsukuba Circuit — 1000 Outer",
+      "category": "Road"
+    },
+    {
+      "id": "tsukuba-circuit-2000-full",
+      "label": "Tsukuba Circuit — 2000 Full",
+      "category": "Road"
+    },
+    {
+      "id": "tsukuba-circuit-2000-moto",
+      "label": "Tsukuba Circuit — 2000 Moto",
+      "category": "Road"
+    },
+    {
+      "id": "tsukuba-circuit-2000-short",
+      "label": "Tsukuba Circuit — 2000 Short",
+      "category": "Road"
+    },
+    {
+      "id": "twin-ring-motegi-east",
+      "label": "Twin Ring Motegi — East",
+      "category": "Road"
+    },
+    {
+      "id": "twin-ring-motegi-grand-prix",
+      "label": "Twin Ring Motegi — Grand Prix",
+      "category": "Road"
+    },
+    {
+      "id": "twin-ring-motegi-west",
+      "label": "Twin Ring Motegi — West",
+      "category": "Road"
+    },
+    {
+      "id": "virginia-international-raceway-full-course",
+      "label": "Virginia International Raceway — Full Course",
+      "category": "Road"
+    },
+    {
+      "id": "virginia-international-raceway-grand-course",
+      "label": "Virginia International Raceway — Grand Course",
+      "category": "Road"
+    },
+    {
+      "id": "virginia-international-raceway-north-course",
+      "label": "Virginia International Raceway — North Course",
+      "category": "Road"
+    },
+    {
+      "id": "virginia-international-raceway-patriot-course",
+      "label": "Virginia International Raceway — Patriot Course",
+      "category": "Road"
+    },
+    {
+      "id": "virginia-international-raceway-south-course",
+      "label": "Virginia International Raceway — South Course",
+      "category": "Road"
+    },
+    {
+      "id": "watkins-glen-international-boot",
+      "label": "Watkins Glen International — Boot",
+      "category": "Road"
+    },
+    {
+      "id": "watkins-glen-international-classic",
+      "label": "Watkins Glen International — Classic",
+      "category": "Road"
+    },
+    {
+      "id": "watkins-glen-international-classic-boot",
+      "label": "Watkins Glen International — Classic Boot",
+      "category": "Road"
+    },
+    {
+      "id": "watkins-glen-international-cup",
+      "label": "Watkins Glen International — Cup",
+      "category": "Road"
+    },
+    {
+      "id": "weathertech-raceway-at-laguna-seca-full-course",
+      "label": "WeatherTech Raceway at Laguna Seca — Full Course",
+      "category": "Road"
+    },
+    {
+      "id": "weathertech-raceway-at-laguna-seca-school",
+      "label": "WeatherTech Raceway at Laguna Seca — School",
+      "category": "Road"
+    },
+    {
+      "id": "willow-springs-international-raceway",
+      "label": "Willow Springs International Raceway",
+      "category": "Road"
+    },
+    {
+      "id": "winton-motor-raceway-club-circuit",
+      "label": "Winton Motor Raceway — Club Circuit",
+      "category": "Road"
+    },
+    {
+      "id": "winton-motor-raceway-national-circuit",
+      "label": "Winton Motor Raceway — National Circuit",
+      "category": "Road"
+    },
+    {
+      "id": "world-wide-technology-raceway-gateway-road-course",
+      "label": "World Wide Technology Raceway (Gateway) — Road Course",
+      "category": "Road"
+    }
+  ]
+}

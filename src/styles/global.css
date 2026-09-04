@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #f2f4f8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.overlay-error {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 28rem;
+  padding: 0.85rem 1rem;
+  background: rgba(80, 20, 20, 0.92);
+  border: 1px solid #ff5c5c;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.overlay-error strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #ffb4b4;
+}
+
+.overlay-boot {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  padding: 0.65rem 0.9rem;
+  background: rgba(8, 12, 18, 0.92);
+  border: 1px solid rgba(var(--ath-accent-rgb), 0.45);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.overlay-boot__logo {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--ath-accent);
+}
+
+.overlay-boot__text {
+  font-size: 0.72rem;
+  color: var(--ath-text-muted);
+}
+
+:root {
+  --ath-accent: #00d4aa;
+  --ath-accent-dim: #00a884;
+  --ath-accent-rgb: 0, 212, 170;
+  --ath-panel: rgba(8, 12, 18, 0.82);
+  --ath-panel-border: rgba(255, 255, 255, 0.12);
+  --ath-text-muted: rgba(242, 244, 248, 0.65);
+  --ath-danger: #ff5c5c;
+  --ath-warning: #ffc857;
+  --iracing-top-band: calc(12vh + 10px);
+  --iracing-bottom-band: 14vh;
+}

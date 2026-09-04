@@ -1,0 +1,2675 @@
+/* ——— Overlay course (placement libre) ——— */
+
+.racing-overlay {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.racing-overlay--free {
+  display: block;
+}
+
+.racing-overlay--embedded {
+  width: 100%;
+  height: 100%;
+}
+
+.racing-overlay--editable {
+  pointer-events: auto;
+}
+
+.racing-overlay__grid {
+  display: contents;
+}
+
+.racing-float {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: min(42rem, 48vw);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.racing-float--editable {
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+}
+
+.racing-float--editable:active,
+.racing-float--dragging {
+  cursor: grabbing;
+  z-index: 30;
+}
+
+.racing-float--dragging {
+  outline: 1px dashed rgba(var(--ath-accent-rgb), 0.85);
+  outline-offset: 3px;
+  filter: brightness(1.05);
+}
+
+.racing-float__handle {
+  position: absolute;
+  top: -0.15rem;
+  left: -0.15rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(var(--ath-accent-rgb), 0.95);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  user-select: none;
+  transform: scale(calc(1 / var(--panel-scale, 1)));
+  transform-origin: top left;
+}
+
+.racing-float__resize {
+  position: absolute;
+  right: -0.3rem;
+  bottom: -0.3rem;
+  z-index: 3;
+  width: 1.25rem;
+  height: 1.25rem;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 2px solid #fff;
+  background: rgba(var(--ath-accent-rgb), 1);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.55),
+    0 2px 8px rgba(0, 0, 0, 0.55);
+  cursor: nwse-resize;
+  touch-action: none;
+  pointer-events: auto;
+  transform: scale(calc(1 / var(--panel-scale, 1)));
+  transform-origin: bottom right;
+}
+
+.racing-float__resize::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 1px;
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0 40%,
+      rgba(255, 255, 255, 0.95) 40% 52%,
+      transparent 52% 64%,
+      rgba(255, 255, 255, 0.95) 64% 76%,
+      transparent 76%
+    );
+  pointer-events: none;
+}
+
+.racing-float__scale {
+  position: absolute;
+  right: 1.35rem;
+  bottom: -0.25rem;
+  z-index: 2;
+  padding: 0.28rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.12s;
+  transform: scale(calc(1 / var(--panel-scale, 1)));
+  transform-origin: bottom right;
+}
+
+.racing-float--editable:hover .racing-float__scale,
+.racing-float--dragging .racing-float__scale {
+  opacity: 1;
+}
+
+.racing-float__body {
+  pointer-events: none;
+}
+
+.racing-overlay--editable .racing-float__body [data-ath-interactive],
+.racing-overlay--editable .racing-float__body button {
+  pointer-events: auto;
+}
+
+.racing-overlay:not(.racing-overlay--editable) .racing-float [data-ath-interactive] {
+  pointer-events: auto;
+}
+
+.strategy-race-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.7rem;
+  padding: 0.35rem 0.55rem;
+  width: max-content;
+  max-width: min(34rem, 32vw);
+  font-size: 0.6rem;
+}
+
+.strategy-race-bar__item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.strategy-race-bar__label {
+  font-weight: 600;
+  color: var(--ath-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.62rem;
+}
+
+.strategy-race-bar__value {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: #f2f4f8;
+}
+
+.strategy-race-bar__value--driver {
+  color: var(--ath-accent);
+}
+
+.strategy-race-bar__value--pit {
+  color: #fbbf24;
+}
+
+.racing-cell {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 0;
+}
+
+.racing-cell--empty {
+  /* zone volontairement vide */
+}
+
+.racing-cell--top-center,
+.racing-cell--mid-left,
+.racing-cell--mid-center {
+  /* cellules vides */
+}
+
+.racing-cell--bottom-center {
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.racing-bottom-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  max-width: min(36rem, 90vw);
+}
+
+.racing-cell--box-led {
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+/* —— Team radio —— */
+.team-radio {
+  --radio-accent: #00d2be;
+
+  display: flex;
+  flex-direction: column;
+  width: clamp(10.5rem, 13vw, 12.5rem);
+  padding: 0;
+  border: none;
+  border-radius: 0 0 10px 0;
+  overflow: hidden;
+  background: #1a1a1a;
+  pointer-events: auto;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.team-radio__main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.team-radio--layout-only .team-radio__main {
+  cursor: grab;
+}
+
+.team-radio--live {
+  animation: team-radio-pulse 1.4s ease-in-out infinite;
+}
+
+.team-radio__top-bar {
+  display: block;
+  height: 3px;
+  background: #e10600;
+  flex-shrink: 0;
+}
+
+.team-radio__header {
+  display: block;
+  padding: 0.4rem 0.65rem;
+  background: #0a0a0a;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.team-radio__wave {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  height: 2.4rem;
+  padding: 0.35rem 0.55rem;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.06) 0.6px,
+      transparent 0.7px
+    )
+    #2c2c2c;
+  background-size: 8px 8px;
+}
+
+.team-radio__bar {
+  flex: 1;
+  max-width: 4px;
+  min-height: 18%;
+  border-radius: 1px;
+  background: var(--radio-accent);
+  opacity: 0.85;
+  animation: team-radio-wave 0.85s ease-in-out infinite alternate;
+}
+
+.team-radio__driver {
+  display: flex;
+  align-items: stretch;
+  background: #0a0a0a;
+  min-height: 1.85rem;
+}
+
+.team-radio__driver-stripe {
+  width: 4px;
+  flex-shrink: 0;
+  background: var(--radio-accent);
+}
+
+.team-radio__driver-name {
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0.55rem;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.team-radio__message {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 3.4rem;
+  padding: 0.55rem 0.65rem 0.55rem;
+  background: #2c2c2c;
+}
+
+.team-radio__headset {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  color: #f2f4f8;
+  opacity: 0.9;
+}
+
+.team-radio__quote {
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  max-width: 100%;
+  padding-right: 1.75rem;
+  white-space: normal;
+}
+
+.team-radio__quote--driver {
+  color: var(--radio-accent);
+  font-weight: 800;
+  text-shadow: 0 0 12px color-mix(in srgb, var(--radio-accent) 35%, transparent);
+}
+
+.team-radio--driver-reply .team-radio__wave {
+  background:
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--radio-accent) 18%, transparent) 0.6px,
+      transparent 0.7px
+    )
+    #2c2c2c;
+  background-size: 8px 8px;
+}
+
+.team-radio__quote::before {
+  content: "“";
+}
+.team-radio__quote::after {
+  content: "”";
+}
+
+.team-radio__replies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem;
+  padding: 0.4rem;
+  background: #121212;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.team-radio__reply {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  padding: 0.35rem 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  background: #1f1f1f;
+  color: #f2f4f8;
+  font-size: 0.62rem;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1.15;
+}
+
+.team-radio__reply:hover {
+  border-color: var(--radio-accent);
+  background: color-mix(in srgb, var(--radio-accent) 18%, #1f1f1f);
+}
+
+.team-radio__reply kbd {
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: rgba(242, 244, 248, 0.55);
+  font-family: inherit;
+}
+
+@keyframes team-radio-wave {
+  from {
+    transform: scaleY(0.55);
+    opacity: 0.55;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes team-radio-pulse {
+  0%,
+  100% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  }
+  50% {
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.45),
+      0 0 0 1px color-mix(in srgb, var(--radio-accent) 45%, transparent);
+  }
+}
+
+.racing-cell--top-left {
+  justify-content: flex-start;
+}
+
+.racing-cell--top-right {
+  grid-column: 3;
+  grid-row: 1;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.racing-cell--top-right-stack {
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 0.45rem;
+  max-width: 100%;
+}
+
+.racing-cell--top-right-stack .timing-panel {
+  width: min(28rem, 32vw);
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.racing-cell--top-right-stack .trackmap {
+  width: min(14rem, 24vw);
+  min-width: 9rem;
+}
+
+.racing-cell--bottom-left {
+  align-items: flex-end;
+}
+
+.racing-cell--bottom-right {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.panel {
+  background: var(--ath-panel);
+  border: 1px solid var(--ath-panel-border);
+  border-radius: 8px;
+  padding: 0.45rem 0.65rem;
+  max-width: 100%;
+}
+
+.panel__title {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ath-accent);
+  margin-bottom: 0.28rem;
+}
+
+.panel__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
+.panel__label {
+  color: var(--ath-text-muted);
+}
+
+.panel__value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+/* ——— Panneau classement (haut droite) ——— */
+
+.race-standings-panel {
+  min-width: 20rem;
+  max-width: min(30rem, 38vw);
+  padding: 0.5rem 0.65rem;
+}
+
+.race-standings-panel__series {
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 0.12rem;
+  color: #f2f4f8;
+}
+
+.race-standings-panel__subtitle {
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 0.35rem;
+  color: var(--ath-text-muted);
+}
+
+.race-standings-panel__timer {
+  margin-bottom: 0.4rem;
+}
+
+.race-standings-panel__timer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.68rem;
+  margin-bottom: 0.2rem;
+}
+
+.race-standings-panel__timer-label {
+  color: var(--ath-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.race-standings-panel__timer-value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+
+.race-standings-panel__progress {
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.race-standings-panel__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ath-accent-dim), var(--ath-accent));
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.race-standings-panel__section {
+  margin: 0.55rem 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ath-accent);
+}
+
+.race-standings-panel__class {
+  margin-top: 0.65rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.race-standings-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.race-standings-list li {
+  display: grid;
+  grid-template-columns:
+    1.2rem
+    1.7rem
+    1.9rem
+    1.35rem
+    minmax(3.8rem, 1fr)
+    3.6rem
+    auto;
+  align-items: center;
+  gap: 0.26rem;
+  padding: 0.12rem 0.08rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.7rem;
+}
+
+.race-standings-list--multiclass li {
+  grid-template-columns:
+    1.2rem
+    1.2rem
+    1.95rem
+    2.15rem
+    1.55rem
+    minmax(4.2rem, 1fr)
+    4.1rem
+    auto;
+}
+
+.race-standings-list__class-pos {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  color: color-mix(in srgb, var(--class-accent, #93c5fd) 75%, #e8edf4);
+}
+
+.race-standings-list__row--class-red,
+.race-standings-list__row--class-blue,
+.race-standings-list__row--class-green,
+.race-standings-list__row--class-orange {
+  border-radius: 4px;
+  background: var(--class-bg);
+  box-shadow: inset 2px 0 0 color-mix(in srgb, var(--class-accent) 55%, transparent);
+}
+
+.race-standings-list__row--player.race-standings-list__row--class-red,
+.race-standings-list__row--player.race-standings-list__row--class-blue,
+.race-standings-list__row--player.race-standings-list__row--class-green,
+.race-standings-list__row--player.race-standings-list__row--class-orange {
+  box-shadow:
+    inset 2px 0 0 var(--class-accent),
+    inset 0 0 0 1px rgba(var(--ath-accent-rgb), 0.35);
+}
+
+.race-standings-list__separator {
+  display: block;
+  height: 0;
+  margin: 0.28rem 0.15rem;
+  border: none;
+  border-top: 1px dashed rgba(255, 255, 255, 0.18);
+  grid-column: 1 / -1;
+}
+
+.race-standings-list__gap {
+  display: block;
+  text-align: center;
+  color: var(--ath-text-muted);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 0.08rem 0;
+  border-bottom: none;
+}
+
+.race-standings-list__row--player {
+  background: rgba(var(--ath-accent-rgb), 0.08);
+  border-radius: 4px;
+}
+
+.race-standings-list__row--player .race-standings-list__pos {
+  color: var(--ath-accent);
+}
+
+.race-standings-list__row--fastest {
+  background: rgba(145, 70, 255, 0.1);
+  border-radius: 4px;
+}
+
+.race-standings-list__row--fastest .race-standings-list__pos {
+  color: #b57aff;
+}
+
+.race-standings-list__row--player.race-standings-list__row--fastest {
+  background: linear-gradient(
+    90deg,
+    rgba(var(--ath-accent-rgb), 0.1) 0%,
+    rgba(145, 70, 255, 0.12) 100%
+  );
+}
+
+.race-standings-list__row--player.race-standings-list__row--fastest
+  .race-standings-list__pos {
+  color: #c9a0ff;
+}
+
+.race-standings-list__pos {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.race-standings-list__num {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.race-standings-list__flag {
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.race-standings-list__name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+/* ——— Garage (tableau dédié) ——— */
+
+.garage-standings-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.06rem;
+  min-width: max-content;
+}
+
+.garage-standings-list li {
+  display: grid;
+  grid-template-columns:
+    1.1rem
+    1.55rem
+    1.75rem
+    1.25rem
+    minmax(3.2rem, 1fr)
+    3.75rem
+    2.4rem
+    1.65rem
+    2rem
+    1.5rem
+    2.1rem
+    minmax(6.8rem, auto);
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.1rem 0.06rem;
+  font-size: 0.66rem;
+  border-radius: 4px;
+}
+
+.garage-standings-list__row--player {
+  background: rgba(var(--ath-accent-rgb), 0.08);
+  box-shadow: inset 2px 0 0 var(--ath-accent);
+}
+
+.garage-standings-list li.garage-standings-list__class {
+  display: block;
+  margin-top: 0.28rem;
+  padding: 0.22rem 0.45rem;
+  border-radius: 3px;
+  background: rgba(var(--ath-accent-rgb), 0.16);
+  color: var(--ath-accent);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.garage-standings-list__pos,
+.garage-standings-list__num,
+.garage-standings-list__laps,
+.garage-standings-list__best-lap-num,
+.garage-standings-list__stint-laps {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.garage-standings-list__time {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.02rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.05;
+  font-weight: 700;
+  min-width: 0;
+  overflow: visible;
+  white-space: nowrap;
+  color: #f2f4f8;
+}
+
+.garage-standings-list__gap {
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: var(--ath-text-muted);
+}
+
+.garage-standings-list__name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.garage-standings-list__flag {
+  display: flex;
+  justify-content: center;
+}
+
+.garage-standings-list__tire,
+.garage-standings-list__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.85rem;
+}
+
+.garage-standings-list__sectors {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+  overflow: visible;
+}
+
+.garage-sector-times {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.28rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.garage-sector-times__chip {
+  font-size: 0.58rem;
+  font-weight: 700;
+  padding: 0.05rem 0.2rem;
+  border-radius: 3px;
+}
+
+.garage-sector-times__chip--personal {
+  color: #b8f5c8;
+  background: rgba(46, 204, 113, 0.18);
+}
+
+.garage-sector-times__chip--record {
+  color: #e8d4ff;
+  background: rgba(155, 89, 182, 0.28);
+}
+
+.garage-sector-times__chip--slower {
+  color: var(--ath-text-muted);
+}
+
+.sector-times-slot {
+  flex-direction: column;
+  gap: 0.02rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.sector-times-slot__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.12rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.05;
+}
+
+.sector-times-slot__label {
+  font-size: 0.48rem;
+  font-weight: 700;
+  color: var(--ath-text-muted);
+}
+
+.sector-times-slot__time {
+  font-size: 0.52rem;
+  font-weight: 700;
+}
+
+.race-standings-list__time {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  text-align: right;
+}
+
+.race-standings-list__time--ahead {
+  color: var(--ath-danger);
+}
+
+.race-standings-list__time--behind {
+  color: var(--ath-accent);
+}
+
+.race-standings-list__tire-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.22rem;
+  min-width: 2.4rem;
+}
+
+.race-standings-list__tire-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.race-standings-list__extras-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.32rem;
+  min-width: 0;
+}
+
+.race-standings-list--sectors .race-standings-list__extras-col {
+  align-items: center;
+}
+
+.race-standings-list__extras-col .race-standings-list__tire-col {
+  flex-shrink: 0;
+}
+
+.race-standings-list--sectors li {
+  grid-template-columns:
+    1.35rem
+    1.95rem
+    2.15rem
+    1.55rem
+    minmax(4.2rem, 1fr)
+    4.1rem
+    minmax(3.2rem, auto);
+}
+
+.race-standings-list--sectors.race-standings-list--multiclass li {
+  grid-template-columns:
+    1.2rem
+    1.2rem
+    1.95rem
+    2.15rem
+    1.55rem
+    minmax(4rem, 1fr)
+    4.1rem
+    minmax(3.2rem, auto);
+}
+
+.standings-sector-bars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.standings-sector-bars__row {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0.12rem;
+}
+
+.standings-sector-bars__bar {
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+  min-height: 0.48rem;
+}
+
+/* ≤5 secteurs : une ligne, pleine largeur de la colonne */
+.standings-sector-bars--single {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 1.42rem;
+  padding: 0.06rem 0;
+}
+
+.standings-sector-bars--single .standings-sector-bars__row {
+  width: 100%;
+  height: 100%;
+  gap: 0.1rem;
+}
+
+.standings-sector-bars--single .standings-sector-bars__bar {
+  flex: 1 1 0;
+  min-width: 0.2rem;
+  max-width: none;
+  height: 100%;
+}
+
+/* 6–10 secteurs : 2 lignes centrées dans la case */
+.standings-sector-bars--double {
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.1rem;
+  height: 1.42rem;
+  padding: 0.04rem 0;
+}
+
+.standings-sector-bars--double .standings-sector-bars__row {
+  height: 0.46rem;
+  gap: 0.1rem;
+}
+
+.standings-sector-bars--double .standings-sector-bars__bar {
+  width: 0.28rem;
+  flex: 0 0 auto;
+  height: 100%;
+}
+
+/* 11+ secteurs : 3 lignes centrées */
+.standings-sector-bars--triple {
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.08rem;
+  height: 1.42rem;
+  padding: 0.03rem 0;
+}
+
+.standings-sector-bars--triple .standings-sector-bars__row {
+  height: 0.38rem;
+  gap: 0.08rem;
+}
+
+.standings-sector-bars--triple .standings-sector-bars__bar {
+  width: 0.24rem;
+  flex: 0 0 auto;
+  height: 100%;
+}
+
+.standings-sector-bars__bar--personal {
+  background: linear-gradient(180deg, #5fe08a 0%, #2ecc71 100%);
+}
+
+.standings-sector-bars__bar--record {
+  background: linear-gradient(180deg, #c9a0ff 0%, #9b59b6 100%);
+}
+
+.standings-sector-bars__bar--slower {
+  background: linear-gradient(180deg, #ffe066 0%, #f1c40f 100%);
+}
+
+.standings-sector-bars__bar--pending {
+  background: linear-gradient(180deg, #6b7280 0%, #4b5563 100%);
+  opacity: 0.55;
+}
+
+/* Logo voiture (carré) */
+.car-logo-square {
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 4px;
+  border: 2px solid var(--car-color, #6b7280);
+  background: rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.car-logo-square__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  padding: 0.1rem;
+  display: block;
+}
+
+.car-logo-square__img--audi {
+  object-fit: contain;
+  object-position: center center;
+  padding: 0.2rem 0.14rem;
+  transform: scale(0.88);
+}
+
+.car-logo-square__img--mercedes {
+  object-fit: contain;
+  padding: 0.12rem;
+}
+
+.car-logo-square__fallback {
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: var(--car-color, #9ca3af);
+  letter-spacing: 0.02em;
+}
+
+/* Drapeau */
+.flag-image {
+  width: 1.35rem;
+  height: 0.9rem;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.flag-image--placeholder {
+  display: block;
+  width: 1.35rem;
+  height: 0.9rem;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.flag-image--emoji {
+  width: auto;
+  height: auto;
+  font-size: 1rem;
+  line-height: 1;
+  box-shadow: none;
+}
+
+.flag-image--code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 0.9rem;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f2f4f8;
+  font-size: 0.48rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+/* Pneu + durée relais */
+.tire-badge {
+  position: relative;
+  width: 1.75rem;
+  height: 2.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e8eaed; /* défaut = base blanche */
+}
+
+.tire-badge__shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tire-badge__laps {
+  position: relative;
+  z-index: 1;
+  font-size: 0.65rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+/* Base / Primary */
+.tire-badge--primary {
+  color: #ffffff;
+}
+
+/* Alternate / option */
+.tire-badge--alternate {
+  color: #e10600;
+}
+
+/* Pluie / wet / inter */
+.tire-badge--wet {
+  color: #1c7ed6;
+}
+
+/* Timing (haut droite) */
+
+.timing-panel {
+  min-width: 14rem;
+  text-align: right;
+  padding: 0.55rem 0.7rem;
+}
+
+.timing-panel .timing-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  font-size: 0.92rem;
+  margin-top: 0.4rem;
+}
+
+.timing-panel .panel__row {
+  flex-direction: row-reverse;
+}
+
+.timing-panel .panel__label {
+  font-size: 0.7rem;
+}
+
+.timing-panel .panel__value {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.timing-panel .sector-bar--top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.timing-panel .sector-bar__row {
+  display: flex;
+  gap: 0.28rem;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.timing-panel .sector-bar--rows-2 .sector-pill,
+.timing-panel .sector-bar--rows-3 .sector-pill {
+  min-width: 0;
+  padding: 0.35rem 0.25rem;
+}
+
+.timing-recent-laps {
+  width: 100%;
+  margin-top: 0.4rem;
+  font-size: 0.72rem;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.timing-recent-laps th,
+.timing-recent-laps td {
+  padding: 0.12rem 0.28rem;
+  text-align: right;
+}
+
+.timing-recent-laps th:first-child,
+.timing-recent-laps td:first-child {
+  text-align: left;
+}
+
+.timing-recent-laps__fast {
+  color: #51cf66;
+}
+
+.timing-recent-laps__slow {
+  color: #ff922b;
+}
+
+.race-standings-list__tire-slot--offline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.race-standings-list__offline {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: #868e96;
+}
+
+.sector-pill--pending {
+  border-color: rgba(255, 255, 255, 0.08);
+  opacity: 0.55;
+}
+
+.sector-pill {
+  flex: 1;
+  min-width: 4.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 0.5rem 0.4rem;
+  border-radius: 6px;
+  font-variant-numeric: tabular-nums;
+  border: 1px solid transparent;
+}
+
+.sector-pill__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
+.sector-pill__time {
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.sector-pill--personal {
+  background: rgba(46, 204, 113, 0.22);
+  border-color: rgba(46, 204, 113, 0.55);
+  color: #b8f5c8;
+}
+
+.sector-pill--record {
+  background: rgba(155, 89, 182, 0.28);
+  border-color: rgba(187, 134, 252, 0.65);
+  color: #e8d4ff;
+}
+
+.sector-pill--slower {
+  background: rgba(255, 152, 60, 0.18);
+  border-color: rgba(255, 152, 60, 0.45);
+  color: #ffd8b8;
+}
+
+/* Carte circuit — style radar circulaire */
+
+.trackmap {
+  display: block;
+  aspect-ratio: 1;
+  pointer-events: none;
+  user-select: none;
+  min-width: 11rem;
+}
+
+.trackmap__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.trackmap__ring {
+  stroke: #4a5568;
+  stroke-linecap: round;
+}
+
+.trackmap__sector {
+  stroke: #3ddc84;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+
+.trackmap__sector--sf {
+  stroke: #5cff9a;
+  stroke-width: 2.25;
+  opacity: 1;
+}
+
+.trackmap__pit-ring {
+  fill: none;
+  stroke: #e879f9;
+  stroke-width: 1.75;
+  stroke-dasharray: 2.5 2;
+}
+
+.trackmap__pit-fill {
+  fill: #e879f9;
+  fill-opacity: 0.35;
+}
+
+.trackmap__pit-label {
+  fill: #fdf4ff;
+  font-size: 6px;
+  font-weight: 900;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.trackmap__car-tick {
+  stroke: #e8edf4;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.trackmap__car--pit .trackmap__car-tick {
+  stroke: #f87171;
+}
+
+.trackmap__car-num {
+  fill: #e8edf4;
+  font-size: 7px;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: central;
+  paint-order: stroke fill;
+  stroke: rgba(8, 10, 14, 0.9);
+  stroke-width: 2.5px;
+}
+
+.trackmap__car-num--player {
+  fill: #67e8f9;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.trackmap__crown-path {
+  fill: #fbbf24;
+  stroke: #92400e;
+  stroke-width: 0.55;
+  stroke-linejoin: round;
+}
+
+.trackmap__player-dot {
+  fill: #22d3ee;
+  stroke: #ecfeff;
+  stroke-width: 1.75;
+  filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.85));
+}
+
+.trackmap__center-lap {
+  fill: #f2f4f8;
+  font-size: 9px;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.trackmap__center-time {
+  fill: rgba(242, 244, 248, 0.65);
+  font-size: 7.5px;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+/* Relatif (même grille que le classement) */
+
+.relative-panel {
+  min-width: 20rem;
+  max-width: min(30rem, 38vw);
+  padding: 0.5rem 0.65rem;
+}
+
+.relative-panel .race-standings-list {
+  margin-top: 0.1rem;
+}
+
+.relative-panel .race-standings-list li {
+  grid-template-columns:
+    1.2rem
+    1.7rem
+    1.9rem
+    1.35rem
+    minmax(3.8rem, 1fr)
+    4rem
+    auto;
+}
+
+.relative-panel .race-standings-list--multiclass li {
+  grid-template-columns:
+    1.05rem
+    1.05rem
+    1.7rem
+    1.9rem
+    1.35rem
+    minmax(3.5rem, 1fr)
+    4rem
+    auto;
+}
+
+.race-standings-list__time-inline {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.04rem;
+  line-height: 1.15;
+}
+
+.race-standings-list__time-inline--relative > span:first-child {
+  font-weight: 700;
+}
+
+.race-standings-list__gap-inline,
+.race-standings-list__last-lap-inline {
+  font-size: 0.64rem;
+  font-weight: 600;
+  color: var(--ath-text-muted);
+}
+
+.race-standings-list__last-lap-inline {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Indicateurs pilote (stand / pénalité / dégâts) */
+
+.driver-status {
+  flex-shrink: 0;
+}
+
+.driver-status--box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.45rem;
+  height: 1.05rem;
+  padding: 0 0.15rem;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 193, 7, 0.75);
+  background: rgba(255, 193, 7, 0.18);
+  color: #ffd54f;
+  font-size: 0.48rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.driver-status--penalty {
+  display: block;
+  width: 1.15rem;
+  height: 0.85rem;
+  border-radius: 2px;
+  background: #111;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.driver-status--damage {
+  display: block;
+  width: 1.15rem;
+  height: 0.85rem;
+  border-radius: 2px;
+  background: #111;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.driver-status--damage::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.42rem;
+  height: 0.42rem;
+  margin: -0.21rem 0 0 -0.21rem;
+  border-radius: 50%;
+  background: #ff8c00;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.driver-status--checkered,
+.driver-status--red,
+.driver-status--yellow,
+.driver-status--blue,
+.driver-status--white,
+.driver-status--green {
+  display: block;
+  width: 1.15rem;
+  height: 0.85rem;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.32);
+}
+
+.driver-status--checkered {
+  background:
+    conic-gradient(#fff 25%, #111 0 50%, #fff 0 75%, #111 0)
+    0 0 / 0.46rem 0.46rem;
+}
+
+.driver-status--red {
+  background: #e52222;
+}
+
+.driver-status--yellow {
+  background: #ffd400;
+}
+
+.driver-status--blue {
+  background: #1888ff;
+}
+
+.driver-status--white {
+  background: #fff;
+}
+
+.driver-status--green {
+  background: #1fc94c;
+}
+
+.driver-status--disqualified,
+.driver-status--service,
+.driver-status--start {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 0.9rem;
+  padding: 0 0.1rem;
+  border-radius: 2px;
+  background: #111;
+  color: #fff;
+  font-size: 0.46rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.driver-status--start {
+  background: #1f7f3d;
+}
+
+.driver-status--service {
+  background: #754b10;
+  color: #ffd166;
+}
+
+/* Drapeau piste intégré au classement (barre pleine largeur) */
+
+.standings-track-flag {
+  margin: 0 -0.65rem 0.3rem;
+  overflow: hidden;
+}
+
+.standings-track-flag__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.55rem;
+  padding: 0.28rem 0.55rem;
+  text-align: center;
+}
+
+.standings-track-flag__title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  line-height: 1.1;
+}
+
+.standings-track-flag--yellow .standings-track-flag__main,
+.standings-track-flag--yellow-waving .standings-track-flag__main,
+.standings-track-flag--caution .standings-track-flag__main {
+  background: #f5ce00;
+  color: #101010;
+}
+
+.standings-track-flag--yellow-waving .standings-track-flag__main {
+  animation: standings-track-flag-pulse 0.7s ease-in-out infinite alternate;
+}
+
+.standings-track-flag--green .standings-track-flag__main,
+.standings-track-flag--start .standings-track-flag__main {
+  background: #00c853;
+  color: #101010;
+}
+
+.standings-track-flag--red .standings-track-flag__main {
+  background: #e10600;
+  color: #ffffff;
+}
+
+.standings-track-flag--white .standings-track-flag__main {
+  background: #f2f4f8;
+  color: #101010;
+}
+
+.standings-track-flag--blue .standings-track-flag__main {
+  background: #1c7ed6;
+  color: #ffffff;
+}
+
+.standings-track-flag--black .standings-track-flag__main {
+  background: #080808;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
+}
+
+.standings-track-flag--surface .standings-track-flag__main {
+  background: repeating-linear-gradient(
+    135deg,
+    #e10600 0 0.75rem,
+    #f5ce00 0.75rem 1.5rem
+  );
+  color: #101010;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.standings-track-flag--checkered .standings-track-flag__main {
+  background:
+    repeating-conic-gradient(#f8f9fc 0% 25%, #101010 0% 50%) 0 0 / 0.65rem
+    0.65rem;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+}
+
+.standings-track-flag--one-lap-green .standings-track-flag__main {
+  background: linear-gradient(90deg, #f5ce00 50%, #00c853 50%);
+  color: #101010;
+}
+
+@keyframes standings-track-flag-pulse {
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(1.12);
+  }
+}
+
+/* HUD ATH circulaire */
+
+.ath-circular {
+  width: min(14.5rem, 22vw);
+  pointer-events: none;
+}
+
+.ath-circular__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ath-circular__rpm-bg {
+  fill: none;
+  stroke: rgba(60, 120, 255, 0.25);
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.ath-circular__rpm-fill {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.ath-circular__tick {
+  fill: #e8ecf2;
+  font-size: 7px;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.ath-circular__input-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.ath-circular__throttle-fill {
+  fill: none;
+  stroke: #22c55e;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.ath-circular__brake-fill {
+  fill: none;
+  stroke: #ef4444;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.ath-circular__clutch-fill {
+  fill: none;
+  stroke: #f59e0b;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.ath-circular__input-label {
+  fill: rgba(255, 255, 255, 0.45);
+  font-size: 5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.ath-circular__speed-value {
+  fill: #fff;
+  font-size: 28px;
+  font-weight: 800;
+  text-anchor: middle;
+  font-family: inherit;
+}
+
+.ath-circular__speed-unit {
+  fill: rgba(255, 255, 255, 0.55);
+  font-size: 8px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+.ath-circular__rpm-value {
+  fill: #f2f4f8;
+  font-size: 11px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.ath-circular__rpm-unit {
+  fill: rgba(255, 255, 255, 0.45);
+  font-size: 6px;
+  text-anchor: middle;
+}
+
+.ath-circular__battery-center {
+  text-anchor: middle;
+}
+
+.ath-circular__battery-pct {
+  fill: #fff;
+  font-size: 7px;
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.ath-circular__gear-value {
+  fill: #fff;
+  font-size: 26px;
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.ath-circular__battery-shell {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.4);
+  stroke-width: 1;
+}
+
+.ath-circular__battery-tip {
+  fill: rgba(255, 255, 255, 0.4);
+}
+
+.ath-circular__battery-fill {
+  fill: #22c55e;
+}
+
+.ath-circular__aux-label {
+  fill: #e8ecf2;
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.ath-circular__aux-title {
+  fill: rgba(255, 255, 255, 0.5);
+  font-size: 6px;
+  font-weight: 700;
+}
+
+.ath-circular__temps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: -0.85rem;
+  margin-bottom: 0.15rem;
+}
+
+.ath-circular__temp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 0.02em;
+}
+
+.ath-circular__temp-icon {
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+.ath-circular__temp-value {
+  font-variant-numeric: tabular-nums;
+}
+
+.ath-circular__p2p-bg {
+  fill: rgba(255, 255, 255, 0.15);
+}
+
+.ath-circular__p2p-fill {
+  fill: #a78bfa;
+}
+
+.ath-circular__fuel {
+  margin-top: 0;
+  width: 100%;
+  min-width: 10rem;
+}
+
+.ath-circular__fuel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.2rem;
+  font-size: 0.68rem;
+}
+
+.ath-circular__fuel-label {
+  font-weight: 800;
+  color: #fbbf24;
+  letter-spacing: 0.08em;
+}
+
+.ath-circular__fuel-bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.ath-circular__fuel-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  transition: width 0.1s linear;
+}
+
+.ath-circular__fuel-text {
+  color: #f2f4f8;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Tableau stratégie */
+
+.strategy-garage-block {
+  pointer-events: auto;
+  background: var(--ath-panel);
+  border: 1px solid var(--ath-panel-border);
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+  margin-top: 0.5rem;
+  max-height: min(42vh, 20rem);
+  overflow: auto;
+}
+
+.strategy-garage-block__title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+}
+
+.strategy-garage-block__top {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.45rem;
+}
+
+.strategy-meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.5rem;
+  margin: 0;
+  font-size: 0.62rem;
+}
+
+.strategy-meta dt {
+  color: var(--ath-text-muted);
+  font-weight: 600;
+}
+
+.strategy-meta dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.strategy-meta__pit-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+}
+
+.info-hint {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  cursor: help;
+  outline: none;
+}
+
+.info-hint__glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 0.55rem;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1;
+  color: var(--ath-text-muted);
+}
+
+.info-hint__bubble {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.35rem);
+  transform: translateX(-50%);
+  z-index: 40;
+  width: max-content;
+  max-width: 14rem;
+  padding: 0.35rem 0.45rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(12, 16, 22, 0.96);
+  color: #f2f4f8;
+  font-size: 0.58rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.35;
+  text-align: left;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.12s ease, visibility 0.12s ease;
+}
+
+.info-hint:hover .info-hint__bubble,
+.info-hint:focus-visible .info-hint__bubble {
+  opacity: 1;
+  visibility: visible;
+}
+
+.info-hint:hover .info-hint__glyph,
+.info-hint:focus-visible .info-hint__glyph {
+  color: var(--ath-accent);
+  border-color: var(--ath-accent);
+}
+
+.strategy-meta__pit-info {
+  margin-left: 0.1rem;
+}
+
+.strategy-setup__row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.strategy-setup__count input {
+  width: 3rem;
+  margin-left: 0.25rem;
+}
+
+.strategy-setup__regen {
+  font-size: 0.6rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid var(--ath-panel-border);
+  background: rgba(var(--ath-accent-rgb), 0.1);
+  color: var(--ath-accent);
+  cursor: pointer;
+}
+
+.strategy-setup__drivers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.strategy-setup__driver {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.62rem;
+}
+
+.strategy-setup__swatch {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.strategy-setup__name {
+  flex: 1;
+  min-width: 5rem;
+  padding: 0.12rem 0.25rem;
+  font-size: 0.62rem;
+  border-radius: 3px;
+  border: 1px solid var(--ath-panel-border);
+  background: rgba(0, 0, 0, 0.35);
+  color: #f2f4f8;
+}
+
+.strategy-setup__laps {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.strategy-setup__laps input {
+  width: 2.5rem;
+  padding: 0.1rem;
+  font-size: 0.62rem;
+  border-radius: 3px;
+  border: 1px solid var(--ath-panel-border);
+  background: rgba(0, 0, 0, 0.35);
+  color: #f2f4f8;
+}
+
+.strategy-table-wrap {
+  overflow: auto;
+  max-height: min(28vh, 14rem);
+}
+
+.strategy-table-wrap--compact {
+  max-height: none;
+}
+
+.strategy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.58rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.strategy-table th {
+  position: sticky;
+  top: 0;
+  background: rgba(12, 14, 18, 0.95);
+  color: var(--ath-text-muted);
+  font-weight: 700;
+  text-align: left;
+  padding: 0.2rem 0.28rem;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.strategy-table td {
+  padding: 0.12rem 0.28rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+}
+
+.strategy-table__time {
+  color: #f87171;
+  font-weight: 600;
+}
+
+.strategy-table__row--active {
+  background: rgba(var(--ath-accent-rgb), 0.12);
+  box-shadow: inset 2px 0 0 var(--ath-accent);
+}
+
+.strategy-table__row--done {
+  opacity: 0.55;
+}
+
+.strategy-table__driver {
+  display: inline-block;
+  padding: 0.08rem 0.35rem;
+  border-radius: 3px;
+  color: #0a0a0a;
+  font-weight: 700;
+  font-size: 0.55rem;
+}
+
+.strategy-table__driver-select {
+  font-size: 0.55rem;
+  padding: 0.1rem 0.2rem;
+  border-radius: 3px;
+  border: 2px solid var(--driver-color, #6b7280);
+  background: rgba(0, 0, 0, 0.4);
+  color: #f2f4f8;
+  max-width: 6rem;
+}
+
+.strategy-table__check {
+  text-align: center;
+  opacity: 0.85;
+}
+
+.strategy-remarks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: 0.4rem;
+  font-size: 0.62rem;
+}
+
+.strategy-remarks textarea {
+  resize: vertical;
+  min-height: 2rem;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid var(--ath-panel-border);
+  background: rgba(0, 0, 0, 0.35);
+  color: #f2f4f8;
+  font-family: inherit;
+  font-size: 0.62rem;
+}
+
+/* ——— Overlay garage ——— */
+
+.garage-overlay {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.garage-overlay [data-ath-interactive] {
+  pointer-events: auto;
+}
+
+/* Bandes iRacing (zones réservées, non dessinées) */
+.garage-overlay__band {
+  flex-shrink: 0;
+  height: var(--iracing-top-band);
+  background: transparent;
+  pointer-events: none;
+}
+
+.garage-overlay__band--bottom {
+  height: var(--iracing-bottom-band);
+}
+
+.garage-overlay__center {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0 1.25rem;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.garage-overlay--hidden-ui {
+  pointer-events: none;
+}
+
+.garage-overlay__restore {
+  position: fixed;
+  top: calc(var(--iracing-top-band) + 0.5rem);
+  right: 1rem;
+  z-index: 20;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--ath-panel-border);
+  border-radius: 6px;
+  background: var(--ath-panel);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.garage-overlay__layout {
+  display: grid;
+  grid-template-columns: minmax(10rem, 14rem) 1fr;
+  gap: 0.65rem;
+  width: min(72rem, 98vw);
+  max-height: 100%;
+  align-items: start;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+.garage-overlay__main-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.garage-overlay__side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: auto;
+  align-self: start;
+}
+
+.garage-panel {
+  background: var(--ath-panel);
+  border: 1px solid var(--ath-panel-border);
+  border-radius: 8px;
+  padding: 0.45rem 0.55rem;
+  pointer-events: auto;
+}
+
+.garage-panel__title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.35rem;
+  align-items: baseline;
+}
+
+.garage-panel__subtitle {
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: var(--ath-text-muted);
+}
+
+.garage-panel__empty {
+  font-size: 0.62rem;
+  color: var(--ath-text-muted);
+  margin: 0;
+}
+
+.garage-weather-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem 0.5rem;
+  margin: 0;
+  font-size: 0.62rem;
+}
+
+.garage-weather-grid dt {
+  color: var(--ath-text-muted);
+  font-weight: 600;
+}
+
+.garage-weather-grid dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+}
+
+.garage-weather-alert {
+  margin: 0.35rem 0 0;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #fbbf24;
+  padding: 0.25rem 0.35rem;
+  background: rgba(251, 191, 36, 0.12);
+  border-radius: 4px;
+}
+
+.garage-weather-ok {
+  margin: 0.35rem 0 0;
+  font-size: 0.58rem;
+  color: var(--ath-text-muted);
+}
+
+.garage-mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.6rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.garage-mini-table th {
+  text-align: left;
+  color: var(--ath-text-muted);
+  font-weight: 600;
+  padding-bottom: 0.2rem;
+}
+
+.garage-mini-table td {
+  padding: 0.08rem 0.15rem 0.08rem 0;
+}
+
+.garage-mini-table__fast {
+  color: var(--ath-accent);
+}
+
+.garage-mini-table__slow {
+  color: #f87171;
+}
+
+.tire-wear-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem;
+}
+
+.tire-wear-cell__label {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--ath-text-muted);
+}
+
+.tire-wear-cell__bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0.12rem 0;
+}
+
+.tire-wear-cell__fill {
+  height: 100%;
+  background: var(--ath-accent);
+}
+
+.tire-wear-cell--low .tire-wear-cell__fill {
+  background: #f87171;
+}
+
+.tire-wear-cell__pct {
+  font-size: 0.58rem;
+  font-weight: 700;
+}
+
+.strategy-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.strategy-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.62rem;
+}
+
+.strategy-field span {
+  color: var(--ath-text-muted);
+  font-weight: 600;
+}
+
+.strategy-field input {
+  width: 5.5rem;
+  font-size: 0.62rem;
+  padding: 0.12rem 0.25rem;
+  border-radius: 3px;
+  border: 1px solid var(--ath-panel-border);
+  background: rgba(0, 0, 0, 0.35);
+  color: #f2f4f8;
+  text-align: right;
+}
+
+.strategy-field--readonly strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.garage-standings-panel {
+  width: min(58rem, 96vw);
+  min-width: 32rem;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--ath-panel);
+  border: 1px solid var(--ath-panel-border);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  pointer-events: auto;
+}
+
+.garage-standings-panel__body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.garage-standings-panel__scroll {
+  flex: 1;
+  min-height: 0;
+  max-height: min(
+    58vh,
+    calc(100vh - var(--iracing-top-band) - var(--iracing-bottom-band) - 10rem)
+  );
+  overflow-x: auto;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  padding-right: 0.2rem;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--ath-accent-rgb), 0.55) rgba(0, 0, 0, 0.35);
+}
+
+.garage-standings-panel__scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.garage-standings-panel__scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 4px;
+}
+
+.garage-standings-panel__scroll::-webkit-scrollbar-thumb {
+  background: rgba(var(--ath-accent-rgb), 0.55);
+  border-radius: 4px;
+}
+
+.garage-standings-panel__scroll--strategy {
+  max-height: min(52vh, calc(100vh - var(--iracing-top-band) - var(--iracing-bottom-band) - 8rem));
+}
+
+.garage-standings-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.garage-standings-panel__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.garage-standings-panel__toggle--active {
+  border-color: var(--ath-accent);
+  background: rgba(var(--ath-accent-rgb), 0.12);
+}
+
+.strategy-garage-block--embedded {
+  margin-top: 0;
+  max-height: none;
+  overflow: visible;
+  background: none;
+  border: none;
+  padding: 0;
+  backdrop-filter: none;
+}
+
+.garage-standings-panel__toggle {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--ath-panel-border);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.garage-standings-panel__toggle:hover {
+  border-color: var(--ath-accent);
+  background: rgba(var(--ath-accent-rgb), 0.12);
+  color: #ffffff;
+}
+
+.garage-standings-panel__empty {
+  font-size: 0.75rem;
+  color: var(--ath-text-muted);
+  padding: 0.5rem 0;
+}
+
+.garage-standings-panel__title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: 0;
+  color: #f2f4f8;
+}
+
+.garage-table-wrap {
+  width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  background: var(--ath-panel);
+  border: 1px solid var(--ath-panel-border);
+  border-radius: 10px;
+}
+
+.garage-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.garage-table thead {
+  position: sticky;
+  top: 0;
+  background: rgba(12, 16, 24, 0.95);
+  z-index: 1;
+}
+
+.garage-table th {
+  text-align: left;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ath-accent);
+  border-bottom: 1px solid var(--ath-panel-border);
+  white-space: nowrap;
+}
+
+.garage-table td {
+  padding: 0.45rem 0.65rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-variant-numeric: tabular-nums;
+}
+
+.garage-table tbody tr:hover {
+  background: rgba(var(--ath-accent-rgb), 0.06);
+}
+
+.garage-table tr.player,
+.garage-table__row--player {
+  background: rgba(var(--ath-accent-rgb), 0.1);
+}
+
+.garage-table tr.player td,
+.garage-table__row--player td {
+  color: var(--ath-accent);
+  font-weight: 600;
+}
+
+.garage-table .col-pos {
+  width: 3rem;
+  font-weight: 700;
+}
+
+.garage-table .col-num {
+  width: 3.5rem;
+}
+
+.garage-table .col-time,
+.garage-table .col-gap {
+  font-weight: 600;
+}
+
+.garage-table tbody tr.player td {
+  color: var(--ath-accent);
+  background: rgba(var(--ath-accent-rgb), 0.08);
+}

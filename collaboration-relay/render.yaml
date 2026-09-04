@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: racewolf-collab-relay
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node collaboration-relay/server.mjs
+    envVars:
+      - key: NODE_VERSION
+        value: "20"

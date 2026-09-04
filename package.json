@@ -1,0 +1,92 @@
+{
+  "name": "iracing-ath",
+  "version": "0.5.0",
+  "private": true,
+  "description": "RaceWolf — overlay iRacing style Racelab",
+  "author": "RaceWolf",
+  "main": "dist-electron/electron/main.js",
+  "scripts": {
+    "dev": "npm run electron:dev",
+    "electron:dev": "concurrently -k \"vite\" \"wait-on http://localhost:5173 && tsc -p tsconfig.electron.json && cross-env ATH_DEV=1 electron .\"",
+    "demo": "cross-env ATH_AUTO_START=demo npm run electron:dev",
+    "endurance:dev": "cross-env ATH_MODE=endurance ATH_AUTO_START=none npm run electron:dev",
+    "endurance:start": "cross-env ATH_MODE=endurance ATH_AUTO_START=none npm run start",
+    "collab:relay": "node collaboration-relay/server.mjs",
+    "build": "tsc -p tsconfig.electron.json && vite build && node scripts/make-app-icon.js && node scripts/copy-electron-assets.js",
+    "start": "electron .",
+    "launch": "electron .",
+    "dist": "npm run build && electron-builder --win portable",
+    "dist:dir": "npm run build && electron-builder --win dir",
+    "website:prepare": "node scripts/prepare-website.js",
+    "website": "node scripts/prepare-website.js && npx --yes serve website -p 4178",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.electron.json --noEmit",
+    "install:electron": "node scripts/ensure-electron.js",
+    "logo:transparent": "node scripts/make-logo-transparent.js",
+    "app:icon": "node scripts/make-app-icon.js && node scripts/make-launcher-shortcut.js",
+    "postinstall": "node scripts/ensure-electron.js && node scripts/make-app-icon.js && node scripts/make-launcher-shortcut.js && (electron-rebuild -f -w @irsdk-node/native || echo Rebuild SDK ignore)"
+  },
+  "dependencies": {
+    "@kmamal/sdl": "^0.11.13",
+    "irsdk-node": "^4.4.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^3.7.2",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@types/ws": "^8.18.1",
+    "@vitejs/plugin-react": "^4.5.0",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^36.3.2",
+    "electron-builder": "^26.15.3",
+    "electron-rebuild": "^3.2.9",
+    "sharp": "^0.34.5",
+    "to-ico": "^1.1.5",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "appId": "com.racewolf.app",
+    "productName": "RaceWolf",
+    "copyright": "Copyright © RaceWolf",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "package.json",
+      "collaboration-relay/**/*"
+    ],
+    "asar": true,
+    "npmRebuild": false,
+    "asarUnpack": [
+      "**/*.node",
+      "**/node_modules/irsdk-node/**",
+      "**/node_modules/@irsdk-node/**",
+      "**/node_modules/@kmamal/sdl/**",
+      "collaboration-relay/**/*"
+    ],
+    "win": {
+      "icon": "electron/assets/racewolf.ico",
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "signAndEditExecutable": true,
+      "signExecutable": false
+    },
+    "portable": {
+      "artifactName": "RaceWolf-${version}-portable.exe",
+      "unpackDirName": "RaceWolf"
+    }
+  }
+}

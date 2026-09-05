@@ -1,7 +1,7 @@
 (function () {
   const cfg = window.RACEWOLF || {};
-  const href = cfg.downloadUrl || "./downloads/RaceWolf-0.5.0-portable.exe";
-  const version = cfg.version || "0.5.0";
+  const href = cfg.downloadUrl || "./downloads/RaceWolf-0.7.0-portable.exe";
+  const version = cfg.version || "0.7.0";
   const size = cfg.sizeLabel || "";
   const fileName = cfg.fileName || href.split("/").pop();
   const platform = cfg.platform || "Windows";

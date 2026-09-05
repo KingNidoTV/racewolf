@@ -10,7 +10,7 @@ npm run website
 
 Ouvre ensuite [http://localhost:4178](http://localhost:4178).
 
-Le script copie le logo et les captures. Pour que le bouton **Télécharger** fonctionne en local, copie `release/RaceWolf-0.5.0-portable.exe` dans `website/downloads/`.
+Le script copie le logo et les captures. Pour que le bouton **Télécharger** fonctionne en local, copie `release/RaceWolf-0.7.0-portable.exe` dans `website/downloads/`.
 
 ## Retours Beta (avis & bugs)
 

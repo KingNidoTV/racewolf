@@ -69,8 +69,12 @@ if (fs.existsSync(configPath)) {
   if (urlMatch) {
     try {
       const previous = JSON.parse(urlMatch[1].trim());
-      // Keep Release / CDN URLs; local ./downloads/ is regenerated below.
-      if (/^https?:\/\//i.test(previous)) downloadUrl = previous;
+      // Keep Release / CDN URLs; bump version/filename when package version changes.
+      if (/^https?:\/\//i.test(previous)) {
+        downloadUrl = previous
+          .replace(/\/download\/v[\d.]+\//, `/download/v${version}/`)
+          .replace(/RaceWolf-[\d.]+-portable\.exe/g, fileName);
+      }
     } catch {
       /* keep default */
     }
